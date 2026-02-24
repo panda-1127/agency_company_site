@@ -77,13 +77,6 @@ export function CaseStudies() {
                       </span>
                     ))}
                   </div>
-                  <Link
-                    href="#"
-                    className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-accent transition-colors"
-                  >
-                    Read the full story
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
                 </div>
                 <div className="flex-1 overflow-hidden rounded-2xl border border-border">
                   <Image
