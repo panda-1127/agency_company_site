@@ -3,12 +3,11 @@
 import { AnimateOnScroll } from "@/components/section-heading"
 
 const stats = [
-  { value: "10+", label: "Years in Business" },
-  { value: "200+", label: "Projects Delivered" },
-  { value: "80+", label: "Team Members" },
+  { value: "100+", label: "Projects Delivered" },
+  { value: "10+", label: "Team Members" },
   { value: "15+", label: "Countries Served" },
   { value: "98%", label: "Client Retention" },
-  { value: "50+", label: "Enterprise Clients" },
+  { value: "20+", label: "Enterprise Clients" },
 ]
 
 export function TeamStats() {

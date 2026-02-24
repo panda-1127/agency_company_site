@@ -20,7 +20,7 @@ export function HeroSection() {
           }}
         />
         <div className="absolute -left-40 -top-40 h-80 w-80 rounded-full bg-yellow-800/10 blur-[120px]" />
-        <div className="absolute -bottom-40 -right-40 h-80 w-80 rounded-full bg-accent/10 blur-[120px]" />
+        <div className="absolute -bottom-40 -right-40 h-80 w-80 rounded-full bg-green-400/10 blur-[120px]" />
       </div>
 
       <div className="relative mx-auto flex max-w-7xl flex-col items-center gap-12 px-6 pb-20 pt-32 lg:flex-row lg:gap-16 lg:px-8 lg:pt-40">
@@ -28,7 +28,7 @@ export function HeroSection() {
         <div className="flex-1 text-center lg:text-left">
           <AnimateOnScroll animation="fade-in-up">
             <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-black">
-              <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
+              <span className="h-1.5 w-1.5 rounded-full bg-amber-500 animate-pulse" />
               Trusted by 50+ Enterprises
             </span>
           </AnimateOnScroll>
