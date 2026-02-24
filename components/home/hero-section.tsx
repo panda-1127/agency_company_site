@@ -19,7 +19,7 @@ export function HeroSection() {
             backgroundSize: "w-full h-full",
           }}
         />
-        <div className="absolute -left-40 -top-40 h-80 w-80 rounded-full bg-primary/10 blur-[120px]" />
+        <div className="absolute -left-40 -top-40 h-80 w-80 rounded-full bg-yellow-800/10 blur-[120px]" />
         <div className="absolute -bottom-40 -right-40 h-80 w-80 rounded-full bg-accent/10 blur-[120px]" />
       </div>
 
@@ -27,7 +27,7 @@ export function HeroSection() {
         {/* Left content */}
         <div className="flex-1 text-center lg:text-left">
           <AnimateOnScroll animation="fade-in-up">
-            <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary">
+            <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-black">
               <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
               Trusted by 50+ Enterprises
             </span>
@@ -41,7 +41,7 @@ export function HeroSection() {
           </AnimateOnScroll>
 
           <AnimateOnScroll animation="fade-in-up" delay={200}>
-            <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground lg:mx-0 text-pretty">
+            <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-white lg:mx-0 text-pretty">
               Over a decade of delivering complex software solutions with a focus on systems that
               reduce costs, enhance experiences, and drive true digital acceleration for
               organisations across finance, energy, and mobility.
@@ -78,7 +78,6 @@ export function HeroSection() {
           <AnimateOnScroll animation="fade-in-up" delay={400}>
             <div className="mt-12 grid grid-cols-3 gap-6 border-t border-border pt-8">
               {[
-                { value: "10+", label: "Years of Experience" },
                 { value: "200+", label: "Projects Delivered" },
                 { value: "98%", label: "Client Satisfaction" },
               ].map((stat) => (
