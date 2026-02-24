@@ -32,7 +32,7 @@ const services = [
     title: "Design & User Experience",
     image: "/images/design.png",
     description:
-      "Crafting intuitive, visually appealing, and user-centered digital experiences and interfaces.",
+      "Crafting intuitive, visually appealing, and modernized user centered digital experiences and interfaces.",
   },
   {
     icon: Brain,
