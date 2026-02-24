@@ -15,7 +15,7 @@ export function HeroSection() {
           className="absolute inset-0 opacity-[0.7] bg-no-repeat bg-cover bg-center blur-sm "
           style={{
             backgroundImage:
-            "url('/images/background-hero.jpg')",
+              "url('/images/background-hero.jpg')",
             backgroundSize: "w-full h-full",
           }}
         />
@@ -27,9 +27,9 @@ export function HeroSection() {
         {/* Left content */}
         <div className="flex-1 text-center lg:text-left">
           <AnimateOnScroll animation="fade-in-up">
-            <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-black">
+            <span className="inline-flex items-center gap-2 rounded-full bg-violet-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-black">
               <span className="h-1.5 w-1.5 rounded-full bg-amber-500 animate-pulse" />
-              Trusted by 50+ Enterprises
+              Trusted by 20+ Enterprises
             </span>
           </AnimateOnScroll>
 
@@ -42,9 +42,9 @@ export function HeroSection() {
 
           <AnimateOnScroll animation="fade-in-up" delay={200}>
             <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-white lg:mx-0 text-pretty">
-              Over a decade of delivering complex software solutions with a focus on systems that
-              reduce costs, enhance experiences, and drive true digital acceleration for
-              organisations across finance, energy, and mobility.
+              Craft cutting edge software solutions that slash costs, elevate experiences, and ignite digital acceleration.
+              Our systems empower organizations in finance, energy, and mobility to thrive in fast evolving world.
+              Join us to redefine what's possible.
             </p>
           </AnimateOnScroll>
 
