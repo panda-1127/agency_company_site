@@ -3,29 +3,38 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useState, useEffect } from "react"
-import { Menu, X, ArrowRight } from "lucide-react"
+import { Menu, X, ArrowRight, Sun, Moon, Languages } from "lucide-react"
+import { useTheme } from "next-themes"
+import { useLanguage } from "@/context/language-context"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 
-const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/services", label: "Services" },
-  { href: "/about", label: "About Us" },
-  { href: "/blog", label: "Blog" },
-  { href: "/career", label: "Careers" },
-  { href: "/contact", label: "Contact" },
-]
-
 export function Navbar() {
+  const { theme, setTheme } = useTheme()
+  const { lang, setLang, t } = useLanguage()
+  const [mounted, setMounted] = useState(false)
   const pathname = usePathname()
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => setMounted(true), [])
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20)
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
+
+  const navLinks = [
+    { href: "/", label: t.nav.home },
+    { href: "/services", label: t.nav.services },
+    { href: "/about", label: t.nav.about },
+    { href: "/blog", label: t.nav.blog },
+    { href: "/career", label: t.nav.careers },
+    { href: "/contact", label: t.nav.contact },
+  ]
+
+
 
   return (
     <header
@@ -69,45 +78,45 @@ export function Navbar() {
           ))}
         </div>
 
-        <div className="hidden lg:flex">
-          <Button asChild className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90">
+        <div className="hidden items-center gap-4 lg:flex">
+          {/* Language Switcher */}
+          <Button variant="ghost" size="icon" onClick={() => setLang(lang === "en" ? "zh" : "en")}>
+            <Languages className="h-5 w-5" />
+          </Button>
+
+          {/* Theme Toggle */}
+          {mounted && (
+            <Button variant="ghost" size="icon" onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
+              {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+            </Button>
+          )}
+
+          <Button asChild className="rounded-full">
             <Link href="/contact">
-              Get in Touch
-              <ArrowRight className="ml-1 h-4 w-4" />
+              {t.nav.getInTouch} <ArrowRight className="ml-1 h-4 w-4" />
             </Link>
           </Button>
         </div>
 
         {/* Mobile Toggle */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="relative z-50 lg:hidden text-foreground"
-          aria-label="Toggle menu"
-        >
-          {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
+        <div className="flex items-center gap-4 lg:hidden">
+          <Button variant="ghost" size="icon" onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
+            {mounted && (theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />)}
+          </Button>
+          <button onClick={() => setIsOpen(!isOpen)} className="text-foreground">
+            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
       </nav>
 
       {/* Mobile Nav */}
-      <div
-        className={cn(
-          "fixed inset-0 z-40 bg-background/98 backdrop-blur-xl transition-all duration-300 lg:hidden",
-          isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-        )}
-      >
-        <div className="flex h-full flex-col items-center justify-center gap-6">
-          {navLinks.map((link, i) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              onClick={() => setIsOpen(false)}
-              className={cn(
-                "text-2xl font-semibold transition-all duration-300",
-                isOpen ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0",
-                pathname === link.href ? "text-primary" : "text-foreground hover:text-primary"
-              )}
-              style={{ transitionDelay: `${i * 50}ms` }}
-            >
+      {isOpen && (
+        <div className="fixed inset-0 z-40 bg-background flex flex-col items-center justify-center gap-6 lg:hidden">
+          <Button variant="outline" onClick={() => setLang(lang === "en" ? "zh" : "en")} className="mb-4">
+            {lang === "en" ? "中文" : "English"}
+          </Button>
+          {navLinks.map((link) => (
+            <Link key={link.href} href={link.href} onClick={() => setIsOpen(false)} className="text-2xl font-semibold">
               {link.label}
             </Link>
           ))}
@@ -118,7 +127,8 @@ export function Navbar() {
             </Link>
           </Button>
         </div>
-      </div>
+      )
+      }
     </header>
   )
 }
