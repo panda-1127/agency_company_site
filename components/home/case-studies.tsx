@@ -55,9 +55,8 @@ export function CaseStudies() {
               delay={100}
             >
               <div
-                className={`flex flex-col gap-8 lg:flex-row lg:items-center lg:gap-16 ${
-                  i % 2 !== 0 ? "lg:flex-row-reverse" : ""
-                }`}
+                className={`flex flex-col gap-8 lg:flex-row lg:items-center lg:gap-16 ${i % 2 !== 0 ? "lg:flex-row-reverse" : ""
+                  }`}
               >
                 <div className="flex-1">
                   <span className="text-5xl font-bold text-primary/20">{item.number}</span>

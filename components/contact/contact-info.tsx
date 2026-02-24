@@ -59,7 +59,7 @@ export function ContactInfo() {
             ))}
           </div>
 
-          <div className="mt-8 border-t border-border pt-8">
+          {/* <div className="mt-8 border-t border-border pt-8">
             <p className="mb-4 text-sm font-medium text-foreground">Follow Us</p>
             <div className="flex gap-3">
               {[
@@ -77,7 +77,7 @@ export function ContactInfo() {
                 </a>
               ))}
             </div>
-          </div>
+          </div> */}
         </div>
       </AnimateOnScroll>
     </div>

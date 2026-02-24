@@ -12,11 +12,11 @@ export function HeroSection() {
       {/* Background grid pattern */}
       <div className="pointer-events-none absolute inset-0">
         <div
-          className="absolute inset-0 opacity-[0.03]"
+          className="absolute inset-0 opacity-[0.7] bg-no-repeat bg-cover bg-center blur-sm "
           style={{
             backgroundImage:
-              "linear-gradient(rgba(14,165,233,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(14,165,233,0.3) 1px, transparent 1px)",
-            backgroundSize: "60px 60px",
+            "url('/images/background-hero.jpg')",
+            backgroundSize: "w-full h-full",
           }}
         />
         <div className="absolute -left-40 -top-40 h-80 w-80 rounded-full bg-primary/10 blur-[120px]" />
@@ -94,7 +94,7 @@ export function HeroSection() {
         {/* Right image */}
         <AnimateOnScroll animation="slide-in-right" delay={200} className="flex-1">
           <div className="relative">
-            <div className="animate-pulse-glow overflow-hidden rounded-2xl border border-border">
+            <div className="animate-pulse-glow overflow-hidden rounded-2xl shadow-md shadow-background/80">
               <Image
                 src="/images/hero-team.jpg"
                 alt="NexaByte team collaborating on software development"

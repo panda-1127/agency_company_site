@@ -34,7 +34,7 @@ const posts = [
       "A comprehensive guide to planning and executing successful cloud migration with minimal disruption to operations.",
   },
   {
-    image: "/images/blog-1.jpg",
+    image: "/images/blog-4.jpg",
     category: "Technical",
     date: "December 22, 2025",
     title: "Scaling Beyond Product-Market Fit: SaaS Architecture Guide",
@@ -42,7 +42,7 @@ const posts = [
       "The tech stack that fueled your MVP can become the very thing that slows you down. Learn how to architect for scale.",
   },
   {
-    image: "/images/blog-2.jpg",
+    image: "/images/blog-5.jpg",
     category: "Business",
     date: "December 19, 2025",
     title: "The Hidden Tech Debt That Can Kill Your Series A Momentum",
@@ -50,7 +50,7 @@ const posts = [
       "You just raised your Seed round. The clock is ticking. Learn how to avoid the most dangerous forms of technical debt.",
   },
   {
-    image: "/images/blog-3.jpg",
+    image: "/images/blog-5.jpg",
     category: "Business",
     date: "December 18, 2025",
     title: "Building Compliant AI: How to Architect for GDPR and HIPAA",
@@ -66,7 +66,7 @@ const posts = [
       "A deep dive into the most common vulnerabilities in smart contracts and how to build more secure decentralized applications.",
   },
   {
-    image: "/images/blog-2.jpg",
+    image: "/images/blog-4.jpg",
     category: "Technical",
     date: "December 10, 2025",
     title: "Is It Worth It? A Framework for Projecting AI Software Returns",

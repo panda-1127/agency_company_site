@@ -16,36 +16,42 @@ const services = [
   {
     icon: Globe,
     title: "Web Development",
+    image: "/images/web.png",
     description:
       "Building and maintaining websites, web applications, and seamless digital user experiences that drive business growth.",
   },
   {
     icon: Smartphone,
     title: "Mobile Development",
+    image: "/images/mobile.png",
     description:
       "Creating and optimizing mobile apps for iOS, Android, and cross-platform experiences that users love.",
   },
   {
     icon: Palette,
     title: "Design & User Experience",
+    image: "/images/design.png",
     description:
       "Crafting intuitive, visually appealing, and user-centered digital experiences and interfaces.",
   },
   {
     icon: Brain,
     title: "AI & Machine Learning",
+    image: "/images/AI.png",
     description:
       "Developing intelligent systems, automating tasks, and enhancing decision-making with data-driven solutions.",
   },
   {
     icon: Cloud,
     title: "Cloud Managed Services",
+    image: "/images/cloud.png",
     description:
       "Optimizing, securing, and maintaining cloud infrastructure for seamless business operations at scale.",
   },
   {
     icon: Link2,
     title: "Blockchain Development",
+    image: "/images/blockchain.png",
     description:
       "Building decentralized applications, smart contracts, and blockchain infrastructure for the next generation of digital trust.",
   },
@@ -53,7 +59,12 @@ const services = [
 
 export function ServicesOverview() {
   return (
-    <section className="bg-background py-24 lg:py-32">
+    <section className="relative bg-background py-24 lg:py-32">
+      <div className="absolute inset-0 bg-cover bg-center opacity-70" style={{
+        backgroundImage:
+          "url('/images/background-services.webp')",
+        backgroundSize: "w-full h-full",
+      }} />
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <AnimateOnScroll>
           <SectionHeading
@@ -68,8 +79,14 @@ export function ServicesOverview() {
             <AnimateOnScroll key={service.title} animation="fade-in-up" delay={i * 100}>
               <Link
                 href="/services"
-                className="group relative flex flex-col rounded-2xl border border-border bg-card p-8 transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5"
-              >
+                className="group relative flex flex-col rounded-2xl border border-border bg-card p-8 transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5 "
+                style={{
+                  backgroundImage: `url(${service.image})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat',
+                  backgroundBlendMode: 'soft-light'
+                }}>
                 <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
                   <service.icon className="h-6 w-6" />
                 </div>
@@ -96,6 +113,6 @@ export function ServicesOverview() {
           </Link>
         </AnimateOnScroll>
       </div>
-    </section>
+    </ section>
   )
 }

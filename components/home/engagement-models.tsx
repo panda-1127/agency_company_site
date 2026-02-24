@@ -32,7 +32,12 @@ const models = [
 
 export function EngagementModels() {
   return (
-    <section className="bg-card py-24 lg:py-32">
+    <section className="relative py-24 lg:py-32">
+      <div className="absolute inset-0 bg-cover bg-center opacity-40" style={{
+        backgroundImage:
+          "url('/images/background-studio.png')",
+        backgroundSize: "w-full h-full",
+      }} />
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <AnimateOnScroll>
           <SectionHeading
