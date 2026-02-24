@@ -14,7 +14,7 @@ export function Openings() {
           />
         </AnimateOnScroll>
         <p className="text-3xl text-center"
-        >No developers in team yet</p>
+        >No open rolls in team yet</p>
       </div>
     </section>
   )

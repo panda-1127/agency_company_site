@@ -89,7 +89,7 @@ const services = [
       "Optimizing, securing, and maintaining cloud infrastructure for seamless business operations at any scale.",
     features: [
       "Cloud Migration Strategy",
-      "Infrastructure as Code",
+      "Networking Fundamentals",
       "DevOps & CI/CD Pipelines",
       "24/7 Monitoring & Support",
       "Cost Optimization",

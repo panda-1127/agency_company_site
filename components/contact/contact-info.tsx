@@ -13,19 +13,19 @@ const contactDetails = [
   {
     icon: Phone,
     label: "Phone",
-    value: "+1 (555) 123-4567",
-    href: "tel:+15551234567",
+    value: "+86 21 6206 1519",
+    href: "tel:+862162061519",
   },
   {
     icon: MapPin,
     label: "Office",
-    value: "123 Innovation Drive, San Francisco, CA 94105",
+    value: "200031 Shanghai, China",
     href: "#",
   },
   {
     icon: Clock,
     label: "Hours",
-    value: "Mon - Fri, 9:00 AM - 6:00 PM PST",
+    value: "Mon - Fri, 9:00 AM - 6:00 PM CST",
     href: "#",
   },
 ]
