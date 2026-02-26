@@ -7,7 +7,6 @@ import {
   Brain,
   Cloud,
   Link2,
-  ArrowRight,
   CheckCircle,
 } from "lucide-react"
 import { AnimateOnScroll } from "@/components/section-heading"
