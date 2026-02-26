@@ -368,7 +368,7 @@ const translations = {
     contactInfo: {
       title: "Get in Touch",
       items: [
-        { label: "Email", value: "hello@C3 Core.io", href: "mailto:hello@C3 Core.io" },
+        { label: "Email", value: "admin@c3core.org", href: "mailto:admin@c3core.org" },
         { label: "Phone", value: "+86 21 6206 1519", href: "tel:+862162061519" },
         { label: "Office", value: "200031 Shanghai, China", href: "#" },
         { label: "Hours", value: "Mon - Fri, 9:00 AM - 6:00 PM CST", href: "#" }
@@ -996,7 +996,7 @@ const translations = {
     contactInfo: {
       title: "联系我们",
       items: [
-        { label: "电子邮件", value: "hello@C3 Core.io", href: "mailto:hello@C3 Core.io" },
+        { label: "电子邮件", value: "admin@c3core.org", href: "mailto:admin@c3core.org" },
         { label: "电话", value: "+86 21 6206 1519", href: "tel:+862162061519" },
         { label: "办公地点", value: "200031 上海, 中国", href: "#" },
         { label: "工作时间", value: "周一 - 周五, 9:00 - 18:00 CST", href: "#" }

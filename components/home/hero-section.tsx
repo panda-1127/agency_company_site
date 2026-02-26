@@ -104,6 +104,7 @@ export function HeroSection() {
                 height={500}
                 className="h-auto w-full object-cover"
                 priority
+                unoptimized
               />
             </div>
             {/* Floating card */}

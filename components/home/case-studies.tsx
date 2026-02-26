@@ -65,6 +65,7 @@ export function CaseStudies() {
                       width={600}
                       height={400}
                       className="h-auto w-full object-cover transition-transform duration-500 hover:scale-105"
+                      unoptimized
                     />
                   </div>
                 </div>
