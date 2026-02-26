@@ -14,15 +14,15 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "NexaByte | Strategic IT Consultancy & Software Development",
-    template: "%s | NexaByte",
+    default: "C3 Core",
+    template: "%s | C3 Core",
   },
   description:
-    "NexaByte delivers world-class software development, blockchain, AI, cloud, and digital transformation services. Your strategic partner in building the future.",
+    "C3 Core delivers world-class software development, blockchain, AI, cloud, and digital transformation services. Your strategic partner in building the future.",
 }
 
 export const viewport: Viewport = {
-  themeColor: "#0B1120",
+  themeColor: "#0f182e",
 }
 
 export default function RootLayout({
@@ -32,7 +32,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="font-sans antialiased">
+      <title>C3 Core</title>
+      <link rel="icon" href="/logo.png" sizes="any"></link>
+      <body className="font-sans antialiased min-h-screen bg-background text-foreground transition-colors duration-300">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -41,7 +43,7 @@ export default function RootLayout({
         >
           <LanguageProvider>
             <Navbar />
-            <main>{children}</main>
+            <main className="relative flex min-h-screen flex-col">{children}</main>
             <Footer />
             <Analytics />
           </LanguageProvider>

@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { useState, useEffect } from "react"
 import { Menu, X, ArrowRight, Sun, Moon, Languages } from "lucide-react"
@@ -47,13 +48,9 @@ export function Navbar() {
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
         <Link href="/" className="flex items-center gap-2" onClick={() => setIsOpen(false)}>
-          <div className="flex items-center gap-2">
-            <div className="relative flex h-9 w-9 items-center justify-center rounded-lg bg-primary">
-              <span className="text-lg font-bold text-primary-foreground">N</span>
-            </div>
-            <span className="text-xl font-bold text-foreground tracking-tight">
-              Nexa<span className="text-primary">Byte</span>
-            </span>
+          <div className="flex align-middle" >
+          <Image className="inline-block" src={"/logo.png"} width={50} height={50} alt="logo" />
+          <Image className="inline-block" src={"/C3_Core.gif"} width={100} height={50} alt="logo_letter" />
           </div>
         </Link>
 

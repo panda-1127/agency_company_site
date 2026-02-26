@@ -2,55 +2,24 @@
 
 import { Sun, Bus, GraduationCap, Landmark, ShoppingCart, Stethoscope } from "lucide-react"
 import { SectionHeading, AnimateOnScroll } from "@/components/section-heading"
-
-const industries = [
-  {
-    icon: Sun,
-    title: "Solar & Energy",
-    description:
-      "Apps and systems designed to make installers' lives better, connecting data points and helping them manage projects and budgets efficiently.",
-  },
-  {
-    icon: Bus,
-    title: "Mobility",
-    description:
-      "Portals and apps created to make traveling smoother, payments faster, and managing programs and fleets smarter.",
-  },
-  {
-    icon: GraduationCap,
-    title: "Education",
-    description:
-      "Solutions crafted to make communication more efficient between institutions and stakeholders with relevant integrations.",
-  },
-  {
-    icon: Landmark,
-    title: "Fintech",
-    description:
-      "Secure, scalable financial technology platforms handling payments, lending, and regulatory compliance at enterprise scale.",
-  },
-  {
-    icon: ShoppingCart,
-    title: "eCommerce",
-    description:
-      "End-to-end commerce solutions with inventory management, multi-channel selling, and optimized checkout experiences.",
-  },
-  {
-    icon: Stethoscope,
-    title: "Healthcare",
-    description:
-      "HIPAA-compliant healthcare applications connecting patients, providers, and payers with seamless data exchange.",
-  },
-]
+import { useLanguage } from "@/context/language-context"
 
 export function Industries() {
+  const { t } = useLanguage()
+  const icons = [Sun, Bus, GraduationCap, Landmark, ShoppingCart, Stethoscope]
+  const industries = t.industries.items.map((item, i) => ({
+    icon: icons[i],
+    ...item
+  }))
+
   return (
     <section className="bg-card py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <AnimateOnScroll>
           <SectionHeading
-            label="Industries"
-            title="Industries we've worked with"
-            description="We bring deep domain expertise across multiple verticals to deliver solutions that truly understand your business."
+            label={t.industries.label}
+            title={t.industries.title}
+            description={t.industries.description}
           />
         </AnimateOnScroll>
 

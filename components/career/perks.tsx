@@ -9,49 +9,25 @@ import {
   Globe,
 } from "lucide-react"
 import { SectionHeading, AnimateOnScroll } from "@/components/section-heading"
-
-const perks = [
-  {
-    icon: Heart,
-    title: "Health & Wellness",
-    description: "Comprehensive health insurance, dental, and vision coverage for you and your family.",
-  },
-  {
-    icon: GraduationCap,
-    title: "Learning & Growth",
-    description: "Annual learning budget, conference attendance, and access to top-tier online courses.",
-  },
-  {
-    icon: Home,
-    title: "Flexible Work",
-    description: "Work from anywhere with flexible hours. We trust you to manage your time effectively.",
-  },
-  {
-    icon: Dumbbell,
-    title: "Gym & Fitness",
-    description: "Monthly gym membership reimbursement to keep you healthy and energized.",
-  },
-  {
-    icon: Coffee,
-    title: "Team Events",
-    description: "Regular team outings, hackathons, and social events to build strong connections.",
-  },
-  {
-    icon: Globe,
-    title: "Travel Opportunities",
-    description: "Work with international clients and travel to exciting locations for on-site projects.",
-  },
-]
+import { useLanguage } from "@/context/language-context"
 
 export function Perks() {
+  const { t } = useLanguage()
+
+  const icons = [Heart, GraduationCap, Home, Dumbbell, Coffee, Globe]
+  const perks = t.perks.items.map((item, i) => ({
+    icon: icons[i],
+    ...item
+  }))
+
   return (
     <section className="bg-background py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <AnimateOnScroll>
           <SectionHeading
-            label="Why NexaByte"
-            title="Perks & Benefits"
-            description="We invest in our people because great software is built by happy, motivated teams."
+            label={t.perks.label}
+            title={t.perks.title}
+            description={t.perks.description}
           />
         </AnimateOnScroll>
 

@@ -1,24 +1,13 @@
-import Link from "next/link"
-import { ArrowRight, Mail, MapPin, Phone, Linkedin, Twitter, Github } from "lucide-react"
+"use client"
 
-const footerLinks = {
-  company: [
-    { label: "About Us", href: "/about" },
-    { label: "Careers", href: "/career" },
-    { label: "Blog", href: "/blog" },
-    { label: "Contact", href: "/contact" },
-  ],
-  services: [
-    { label: "Web Development", href: "/services" },
-    { label: "Mobile Development", href: "/services" },
-    { label: "Blockchain Development", href: "/services" },
-    { label: "AI & Machine Learning", href: "/services" },
-    { label: "Cloud Services", href: "/services" },
-    { label: "Design & UX", href: "/services" },
-  ],
-}
+import Link from "next/link"
+import Image from "next/image"
+import { ArrowRight, Mail, MapPin, Phone } from "lucide-react"
+import { useLanguage } from "@/context/language-context"
 
 export function Footer() {
+  const { t } = useLanguage();
+
   return (
     <footer className="border-t border-border bg-card">
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
@@ -26,26 +15,23 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-2">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary">
-                <span className="text-lg font-bold text-primary-foreground">N</span>
+              <div className="flex align-middle" >
+                <Image className="inline-block" src={"/logo.png"} width={50} height={50} alt="logo" />
+                <Image className="inline-block" src={"/C3_Core.gif"} width={100} height={50} alt="logo_letter" />
               </div>
-              <span className="text-xl font-bold text-foreground tracking-tight">
-                Nexa<span className="text-primary">Byte</span>
-              </span>
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-              Your strategic partner in software development and digital transformation. Building the
-              future, one line of code at a time.
+              {t.footer.about}
             </p>
           </div>
 
           {/* Company */}
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground">
-              Company
+              {t.footerLinks.labels.company}
             </h3>
             <ul className="mt-4 flex flex-col gap-3">
-              {footerLinks.company.map((link) => (
+              {t.footerLinks.company.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
@@ -61,10 +47,10 @@ export function Footer() {
           {/* Services */}
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground">
-              Services
+              {t.footerLinks.labels.services}
             </h3>
             <ul className="mt-4 flex flex-col gap-3">
-              {footerLinks.services.map((link) => (
+              {t.footerLinks.services.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
@@ -80,21 +66,21 @@ export function Footer() {
           {/* Contact */}
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground">
-              Get in Touch
+              {t.footerLinks.labels.contact}
             </h3>
             <ul className="mt-4 flex flex-col gap-4">
               <li className="flex items-start gap-3">
                 <Mail className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                <span className="text-sm text-muted-foreground">hello@nexabyte.io</span>
+                <span className="text-sm text-muted-foreground">{t.footerLinks.contact.email}</span>
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                <span className="text-sm text-muted-foreground">+86 21 6206 1519</span>
+                <span className="text-sm text-muted-foreground">{t.footerLinks.contact.phone}</span>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
                 <span className="text-sm text-muted-foreground">
-                  200031 Shanghai, China
+                  {t.footerLinks.contact.address}
                 </span>
               </li>
             </ul>
@@ -102,21 +88,21 @@ export function Footer() {
               href="/contact"
               className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-primary transition-colors hover:text-accent"
             >
-              Contact Us <ArrowRight className="h-4 w-4" />
+              {t.footerLinks.labels.contact} <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         </div>
 
         <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 md:flex-row">
           <p className="text-xs text-muted-foreground">
-            &copy; {new Date().getFullYear()} NexaByte. All rights reserved.
+            &copy; {new Date().getFullYear()} C3 Core {t.footer.rights}
           </p>
           <div className="flex gap-6">
             <Link href="#" className="text-xs text-muted-foreground hover:text-primary transition-colors">
-              Privacy Policy
+              {t.footerLinks.labels.privacy}
             </Link>
             <Link href="#" className="text-xs text-muted-foreground hover:text-primary transition-colors">
-              Terms of Service
+              {t.footerLinks.labels.terms}
             </Link>
           </div>
         </div>

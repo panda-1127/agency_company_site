@@ -5,8 +5,16 @@ import Link from "next/link"
 import { ArrowRight, Play } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { AnimateOnScroll } from "@/components/section-heading"
+import { useLanguage } from "@/context/language-context"
 
 export function HeroSection() {
+  const { t } = useLanguage();
+
+  const stats = [
+    { value: "200+", label: t.hero.pro_desc },
+    { value: "98%", label: t.hero.pro_client },
+  ]
+
   return (
     <section className="relative min-h-screen overflow-hidden bg-background">
       {/* Background grid pattern */}
@@ -29,22 +37,20 @@ export function HeroSection() {
           <AnimateOnScroll animation="fade-in-up">
             <span className="inline-flex items-center gap-2 rounded-full bg-violet-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-black">
               <span className="h-1.5 w-1.5 rounded-full bg-amber-500 animate-pulse" />
-              Trusted by 20+ Enterprises
+              {t.hero.badge}
             </span>
           </AnimateOnScroll>
 
           <AnimateOnScroll animation="fade-in-up" delay={100}>
             <h1 className="mt-6 text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl xl:text-7xl text-balance">
-              Your Strategic Partner in{" "}
-              <span className="text-primary">Software Development</span>
+              {t.hero.title_1}{" "}
+              <span className="text-primary">{t.hero.title_2}</span>
             </h1>
           </AnimateOnScroll>
 
           <AnimateOnScroll animation="fade-in-up" delay={200}>
             <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-white lg:mx-0 text-pretty">
-              Craft cutting edge software solutions that slash costs, elevate experiences, and ignite digital acceleration.
-              Our systems empower organizations in finance, energy, and mobility to thrive in fast evolving world.
-              Join us to redefine what's possible.
+              {t.hero.disc}
             </p>
           </AnimateOnScroll>
 
@@ -56,7 +62,7 @@ export function HeroSection() {
                 className="h-12 rounded-full bg-primary px-8 text-primary-foreground hover:bg-primary/90"
               >
                 <Link href="/contact">
-                  Get a Free Consultation
+                  {t.hero.btn1}
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
@@ -68,7 +74,7 @@ export function HeroSection() {
               >
                 <Link href="/services">
                   <Play className="mr-2 h-4 w-4 text-primary" />
-                  Explore Our Services
+                  {t.hero.btn2}
                 </Link>
               </Button>
             </div>
@@ -77,13 +83,10 @@ export function HeroSection() {
           {/* Stats */}
           <AnimateOnScroll animation="fade-in-up" delay={400}>
             <div className="mt-12 grid grid-cols-3 gap-6 border-t border-border pt-8">
-              {[
-                { value: "200+", label: "Projects Delivered" },
-                { value: "98%", label: "Client Satisfaction" },
-              ].map((stat) => (
+              {stats.map((stat) => (
                 <div key={stat.label} className="text-center lg:text-left">
                   <p className="text-2xl font-bold text-primary sm:text-3xl">{stat.value}</p>
-                  <p className="mt-1 text-xs text-muted-foreground sm:text-sm">{stat.label}</p>
+                  <p className="mt-1 text-xs text-blue-800 sm:text-sm">{stat.label}</p>
                 </div>
               ))}
             </div>
@@ -96,7 +99,7 @@ export function HeroSection() {
             <div className="animate-pulse-glow overflow-hidden rounded-2xl shadow-md shadow-background/80">
               <Image
                 src="/images/hero-team.jpg"
-                alt="NexaByte team collaborating on software development"
+                alt="C3 Core team collaborating on software development"
                 width={700}
                 height={500}
                 className="h-auto w-full object-cover"
@@ -110,8 +113,8 @@ export function HeroSection() {
                   <span className="text-lg font-bold text-accent">A+</span>
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-foreground">ISO 27001 Certified</p>
-                  <p className="text-xs text-muted-foreground">Security & Quality Assured</p>
+                  <p className="text-sm font-semibold text-foreground">{t.hero.iso}</p>
+                  <p className="text-xs text-muted-foreground">{t.hero.iso_desc}</p>
                 </div>
               </div>
             </div>

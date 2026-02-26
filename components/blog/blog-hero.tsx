@@ -2,8 +2,11 @@
 
 import Image from "next/image"
 import { AnimateOnScroll } from "@/components/section-heading"
+import { useLanguage } from "@/context/language-context"
 
 export function BlogHero() {
+  const { t } = useLanguage()
+
   return (
     <section className="relative overflow-hidden bg-background pb-16 pt-32 lg:pt-40">
       <div className="pointer-events-none absolute inset-0">
@@ -15,17 +18,17 @@ export function BlogHero() {
           <div className="flex-1">
             <AnimateOnScroll animation="fade-in-up">
               <span className="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary">
-                Blog
+                {t.blogHero.badge}
               </span>
             </AnimateOnScroll>
             <AnimateOnScroll animation="fade-in-up" delay={100}>
               <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl text-balance">
-                Stay up to date!
+                {t.blogHero.title}
               </h1>
             </AnimateOnScroll>
             <AnimateOnScroll animation="fade-in-up" delay={200}>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground text-pretty">
-                Stay up to date with our latest content on software development, emerging technologies, and industry insights from the NexaByte team.
+                {t.blogHero.description}
               </p>
             </AnimateOnScroll>
           </div>

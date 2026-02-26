@@ -2,8 +2,11 @@
 
 import Image from "next/image"
 import { AnimateOnScroll } from "@/components/section-heading"
+import { useLanguage } from "@/context/language-context"
 
 export function CareerHero() {
+  const { t } = useLanguage()
+
   return (
     <section className="relative overflow-hidden bg-background pb-16 pt-32 lg:pt-40">
       <div className="pointer-events-none absolute inset-0">
@@ -15,19 +18,17 @@ export function CareerHero() {
           <div className="flex-1">
             <AnimateOnScroll animation="fade-in-up">
               <span className="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary">
-                Careers
+                {t.careerHero.badge}
               </span>
             </AnimateOnScroll>
             <AnimateOnScroll animation="fade-in-up" delay={100}>
               <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl text-balance">
-                Power up your career!
+                {t.careerHero.title}
               </h1>
             </AnimateOnScroll>
             <AnimateOnScroll animation="fade-in-up" delay={200}>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground text-pretty">
-                Join a results-driven technical team with a knack for innovation and using the
-                latest technologies to help enterprises achieve digital acceleration. Ready to make
-                an impact?
+                {t.careerHero.description}
               </p>
             </AnimateOnScroll>
           </div>
@@ -36,7 +37,7 @@ export function CareerHero() {
             <div className="overflow-hidden rounded-2xl border border-border">
               <Image
                 src="/images/career-hero.jpg"
-                alt="NexaByte team workspace"
+                alt={t.careerHero.title}
                 width={600}
                 height={400}
                 className="h-auto w-full object-cover"

@@ -1,41 +1,23 @@
 "use client"
 
-import { Mail, Phone, MapPin, Clock, Linkedin, Twitter, Github } from "lucide-react"
+import { Mail, Phone, MapPin, Clock } from "lucide-react"
 import { AnimateOnScroll } from "@/components/section-heading"
+import { useLanguage } from "@/context/language-context"
 
-const contactDetails = [
-  {
-    icon: Mail,
-    label: "Email",
-    value: "hello@nexabyte.io",
-    href: "mailto:hello@nexabyte.io",
-  },
-  {
-    icon: Phone,
-    label: "Phone",
-    value: "+86 21 6206 1519",
-    href: "tel:+862162061519",
-  },
-  {
-    icon: MapPin,
-    label: "Office",
-    value: "200031 Shanghai, China",
-    href: "#",
-  },
-  {
-    icon: Clock,
-    label: "Hours",
-    value: "Mon - Fri, 9:00 AM - 6:00 PM CST",
-    href: "#",
-  },
-]
+const icons = [Mail, Phone, MapPin, Clock]
 
 export function ContactInfo() {
+  const { t } = useLanguage()
+  const contactDetails = t.contactInfo.items.map((item, i) => ({
+    icon: icons[i],
+    ...item
+  }))
+
   return (
     <div className="flex flex-col justify-center">
       <AnimateOnScroll animation="slide-in-right">
         <div className="rounded-2xl border border-border bg-card p-8 lg:p-10">
-          <h2 className="mb-6 text-xl font-semibold text-foreground">Get in Touch</h2>
+          <h2 className="mb-6 text-xl font-semibold text-foreground">{t.contactInfo.title}</h2>
 
           <div className="flex flex-col gap-6">
             {contactDetails.map((item) => (

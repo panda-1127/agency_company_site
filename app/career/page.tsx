@@ -8,7 +8,7 @@ import { CtaSection } from "@/components/home/cta-section"
 export const metadata: Metadata = {
   title: "Careers",
   description:
-    "Join NexaByte - explore open positions and become part of a results-driven team pushing the boundaries of technology.",
+    "Join C3 Core - explore open positions and become part of a results-driven team pushing the boundaries of technology.",
 }
 
 export default function CareerPage() {

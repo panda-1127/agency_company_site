@@ -7,7 +7,7 @@ import { Industries } from "@/components/contact/industries"
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Get in touch with NexaByte. Let us help you build software that drives real business results.",
+    "Get in touch with C3 Core. Let us help you build software that drives real business results.",
 }
 
 export default function ContactPage() {

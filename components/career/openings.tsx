@@ -1,20 +1,23 @@
 "use client"
 
 import { SectionHeading, AnimateOnScroll } from "@/components/section-heading"
+import { useLanguage } from "@/context/language-context"
 
 export function Openings() {
+  const { t } = useLanguage()
+
   return (
     <section className="bg-card py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <AnimateOnScroll>
           <SectionHeading
-            label="Current Openings"
-            title="Join like-minded individuals"
-            description="Join a team that builds bespoke software solutions by connecting data, technology, and aesthetics."
+            label={t.openings.label}
+            title={t.openings.title}
+            description={t.openings.description}
           />
         </AnimateOnScroll>
         <p className="text-3xl text-center"
-        >No open rolls in team yet</p>
+        >{t.openings.emptyMessage}</p>
       </div>
     </section>
   )

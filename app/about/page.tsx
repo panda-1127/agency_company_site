@@ -8,7 +8,7 @@ import { CtaSection } from "@/components/home/cta-section"
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Learn about NexaByte - a results-driven team of engineering and creative professionals with a knack for innovation.",
+    "Learn about C3 Core - a results-driven team of engineering and creative professionals with a knack for innovation.",
 }
 
 export default function AboutPage() {
