@@ -1,44 +1,88 @@
 "use client"
 
-import Link from "next/link"
+import { useLanguage } from "@/lib/language-context"
+import { Github, Linkedin, ArrowUp } from "lucide-react"
+import { useState } from "react"
 import Image from "next/image"
-import { ArrowRight, Mail, MapPin, Phone } from "lucide-react"
-import { useLanguage } from "@/context/language-context"
+
+const socialLinks = [
+  { icon: Github, href: "https://github.com", label: "GitHub" },
+  { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
+]
 
 export function Footer() {
-  const { t } = useLanguage();
+  const { t } = useLanguage()
+  const [email, setEmail] = useState("")
+
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault()
+    setEmail("")
+  }
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" })
+  }
 
   return (
-    <footer className="border-t border-border bg-card">
-      <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+    <footer className="relative border-t border-border bg-card">
+      {/* Gradient accent */}
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary to-transparent" />
+
+      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        <div className="grid gap-12 lg:grid-cols-4">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center gap-2">
-              <div className="flex align-middle" >
-                <Image className="inline-block" src={"/logo.png"} width={50} height={50} alt="logo" />
-                <Image className="inline-block" src={"/C3_Core.gif"} width={100} height={50} alt="logo_letter" />
+            <div className="mb-4 flex items-center gap-2">
+              <Image className="inline-block" src={"/logo.png"} width={50} height={50} alt="logo" />
+              <div className="flex flex-col">
+                <span className="text-lg font-bold leading-tight text-foreground">
+                  C3
+                </span>
+                <span className="text-md leading-tight text-muted-foreground">
+                  Core
+                </span>
               </div>
-            </Link>
-            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-              {t.footer.about}
+            </div>
+            <p className="mb-6 text-lg leading-relaxed text-muted-foreground">
+              {t.footer.description}
             </p>
+            <div className="flex gap-3">
+              {socialLinks.map((social, i) => (
+                <a
+                  key={i}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex h-9 w-9 items-center justify-center rounded-lg border border-border text-muted-foreground transition-colors hover:border-primary hover:bg-primary/10 hover:text-primary"
+                  aria-label={social.label}
+                >
+                  <social.icon className="h-4 w-4" />
+                </a>
+              ))}
+            </div>
           </div>
 
-          {/* Company */}
+          {/* Quick Links */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground">
-              {t.footerLinks.labels.company}
+            <h3 className="mb-4 text-lg font-semibold text-foreground">
+              {t.footer.quickLinks}
             </h3>
-            <ul className="mt-4 flex flex-col gap-3">
-              {t.footerLinks.company.map((link) => (
-                <li key={link.label}>
-                  <Link
+            <ul className="flex flex-col gap-2.5">
+              {[
+                { label: t.nav.home, href: "#home" },
+                { label: t.nav.about, href: "#about" },
+                { label: t.nav.services, href: "#services" },
+                { label: t.nav.portfolio, href: "#portfolio" },
+                { label: t.nav.team, href: "#team" },
+                { label: t.nav.contact, href: "#contact" },
+              ].map((link, i) => (
+                <li key={i}>
+                  <a
                     href={link.href}
-                    className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                    className="text-lg text-muted-foreground transition-colors hover:text-primary"
                   >
                     {link.label}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -46,64 +90,75 @@ export function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground">
-              {t.footerLinks.labels.services}
+            <h3 className="mb-4 text-lg font-semibold text-foreground">
+              {t.footer.services}
             </h3>
-            <ul className="mt-4 flex flex-col gap-3">
-              {t.footerLinks.services.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-muted-foreground transition-colors hover:text-primary"
+            <ul className="flex flex-col gap-2.5">
+              {t.services.items.map((service, i) => (
+                <li key={i}>
+                  <a
+                    href="#services"
+                    className="text-lg text-muted-foreground transition-colors hover:text-primary"
                   >
-                    {link.label}
-                  </Link>
+                    {service.title}
+                  </a>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Newsletter */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground">
-              {t.footerLinks.labels.contact}
+            <h3 className="mb-4 text-lg font-semibold text-foreground">
+              {t.footer.newsletter}
             </h3>
-            <ul className="mt-4 flex flex-col gap-4">
-              <li className="flex items-start gap-3">
-                <Mail className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                <span className="text-sm text-muted-foreground">{t.footerLinks.contact.email}</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <Phone className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                <span className="text-sm text-muted-foreground">{t.footerLinks.contact.phone}</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                <span className="text-sm text-muted-foreground">
-                  {t.footerLinks.contact.address}
-                </span>
-              </li>
-            </ul>
-            <Link
-              href="/contact"
-              className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-primary transition-colors hover:text-accent"
-            >
-              {t.footerLinks.labels.contact} <ArrowRight className="h-4 w-4" />
-            </Link>
+            <p className="mb-4 text-lg text-muted-foreground">
+              {t.footer.newsletterText}
+            </p>
+            <form onSubmit={handleSubscribe} className="flex gap-2">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder={t.footer.emailPlaceholder}
+                required
+                className="w-full rounded-lg border border-input bg-background px-3 py-2 text-lg text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+              />
+              <button
+                type="submit"
+                className="shrink-0 rounded-lg bg-primary px-4 py-2 text-lg font-semibold text-primary-foreground transition-all hover:opacity-90"
+              >
+                {t.footer.subscribe}
+              </button>
+            </form>
           </div>
         </div>
 
-        <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 md:flex-row">
-          <p className="text-xs text-muted-foreground">
-            &copy; {new Date().getFullYear()} C3 Core {t.footer.rights}
+        {/* Bottom Bar */}
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 sm:flex-row">
+          <p className="text-lg text-muted-foreground">
+            {"© 2025 C3 Core Consulting. "}{t.footer.rights}
           </p>
-          <div className="flex gap-6">
-            <Link href="#" className="text-xs text-muted-foreground hover:text-primary transition-colors">
-              {t.footerLinks.labels.privacy}
-            </Link>
-            <Link href="#" className="text-xs text-muted-foreground hover:text-primary transition-colors">
-              {t.footerLinks.labels.terms}
-            </Link>
+          <div className="flex items-center gap-6">
+            <a
+              href="#"
+              className="text-lg text-muted-foreground transition-colors hover:text-primary"
+            >
+              {t.footer.privacy}
+            </a>
+            <a
+              href="#"
+              className="text-lg text-muted-foreground transition-colors hover:text-primary"
+            >
+              {t.footer.terms}
+            </a>
+            <button
+              onClick={scrollToTop}
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:border-primary hover:bg-primary/10 hover:text-primary"
+              aria-label="Scroll to top"
+            >
+              <ArrowUp className="h-4 w-4" />
+            </button>
           </div>
         </div>
       </div>

@@ -1,28 +1,25 @@
-import type { Metadata, Viewport } from "next"
-import { Inter } from "next/font/google"
+import type { Metadata } from "next"
+import { Inter, Noto_Sans_SC } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
-import { ThemeProvider } from "@/components/theme-provider"
-import { LanguageProvider } from "@/context/language-context"
+import { ThemeProvider } from "next-themes"
+import { LanguageProvider } from "@/lib/language-context"
 import "./globals.css"
-import { Navbar } from "@/components/navbar"
-import { Footer } from "@/components/footer"
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
 })
 
-export const metadata: Metadata = {
-  title: {
-    default: "C3 Core",
-    template: "%s | C3 Core",
-  },
-  description:
-    "C3 Core delivers world-class software development, blockchain, AI, cloud, and digital transformation services. Your strategic partner in building the future.",
-}
+const notoSansSC = Noto_Sans_SC({
+  subsets: ["latin"],
+  variable: "--font-noto-sc",
+  weight: ["300", "400", "500", "700", "900"],
+})
 
-export const viewport: Viewport = {
-  themeColor: "#0f182e",
+export const metadata: Metadata = {
+  title: "C3 Core",
+  description:
+    "C3 Core delivers world-class software development, blockchain, AI, cloud, and digital transformation services. Your strategic partner in building the future."
 }
 
 export default function RootLayout({
@@ -34,21 +31,15 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <title>C3 Core</title>
       <link rel="icon" href="/logo.png" sizes="any"></link>
-      <body className="font-sans antialiased min-h-screen bg-background text-foreground transition-colors duration-300">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
+      <body
+        className={`${inter.variable} ${notoSansSC.variable} font-sans antialiased`}
+      >
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
           <LanguageProvider>
-            <Navbar />
-            <main className="relative flex min-h-screen flex-col">{children}</main>
-            <Footer />
-            <Analytics />
+            {children}
           </LanguageProvider>
         </ThemeProvider>
-
+        <Analytics />
       </body>
     </html>
   )

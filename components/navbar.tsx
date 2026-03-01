@@ -1,131 +1,157 @@
 "use client"
 
-import Link from "next/link"
-import Image from "next/image"
-import { usePathname } from "next/navigation"
 import { useState, useEffect } from "react"
-import { Menu, X, ArrowRight, Sun, Moon, Languages } from "lucide-react"
 import { useTheme } from "next-themes"
-import { useLanguage } from "@/context/language-context"
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
+import Image from "next/image"
+import { useLanguage } from "@/lib/language-context"
+import { motion, AnimatePresence } from "framer-motion"
+import { Menu, X, Sun, Moon, Globe, Icon } from "lucide-react"
+
+const navLinks = [
+  { key: "home", href: "#home" },
+  { key: "about", href: "#about" },
+  { key: "services", href: "#services" },
+  { key: "portfolio", href: "#portfolio" },
+  { key: "team", href: "#team" },
+  { key: "testimonials", href: "#testimonials" },
+  { key: "contact", href: "#contact" },
+] as const
 
 export function Navbar() {
-  const { theme, setTheme } = useTheme()
-  const { lang, setLang, t } = useLanguage()
-  const [mounted, setMounted] = useState(false)
-  const pathname = usePathname()
-  const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-
-  useEffect(() => setMounted(true), [])
+  const [mobileOpen, setMobileOpen] = useState(false)
+  const { theme, setTheme } = useTheme()
+  const { locale, t, toggleLanguage } = useLanguage()
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
+    setMounted(true)
     const handleScroll = () => setScrolled(window.scrollY > 20)
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  const navLinks = [
-    { href: "/", label: t.nav.home },
-    { href: "/services", label: t.nav.services },
-    { href: "/about", label: t.nav.about },
-    { href: "/blog", label: t.nav.blog },
-    { href: "/career", label: t.nav.careers },
-    { href: "/contact", label: t.nav.contact },
-  ]
-
-
+  const navT = t.nav
 
   return (
-    <header
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        scrolled
-          ? "bg-background/90 backdrop-blur-xl border-b border-border shadow-lg shadow-background/50"
-          : "bg-background/20 backdrop-blur-xl shadow-lg shadow-background/50"
-      )}
-    >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
-        <Link href="/" className="flex items-center gap-2" onClick={() => setIsOpen(false)}>
-          <div className="flex align-middle" >
-          <Image className="inline-block" src={"/logo.png"} width={50} height={50} alt="logo" />
-          <Image className="inline-block" src={"/C3_Core.gif"} width={100} height={50} alt="logo_letter" />
+    <>
+      <motion.header
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
+            ? "glass-effect bg-background/80 shadow-lg border-b border-border"
+            : "bg-transparent"
+          }`}
+      >
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex h-16 items-center justify-between lg:h-20">
+            {/* Logo */}
+            <a href="#home" className="flex items-center gap-2">
+              <Image className="inline-block" src={"/logo.png"} width={50} height={50} alt="logo" />
+              <div className="flex flex-col">
+                <span className="text-lg font-bold leading-tight text-foreground">
+                  C3
+                </span>
+                <span className="text-sm leading-tight text-muted-foreground">
+                  Core
+                </span>
+              </div>
+            </a>
+
+            {/* Desktop Nav */}
+            <nav className="hidden items-center gap-1 lg:flex">
+              {navLinks.map((link) => (
+                <a
+                  key={link.key}
+                  href={link.href}
+                  className="rounded-lg px-3 py-2 text-lg font-medium text-foreground transition-colors hover:bg-secondary hover:text-primary"
+                >
+                  {navT[link.key as keyof typeof navT]}
+                </a>
+              ))}
+            </nav>
+
+            {/* Actions */}
+            <div className="flex items-center gap-2">
+              {/* Language Toggle */}
+              <button
+                onClick={toggleLanguage}
+                className="flex items-center gap-1.5 rounded-lg border border-border px-3 py-2 text-lg font-medium text-foreground transition-all hover:bg-secondary"
+                aria-label="Toggle language"
+              >
+                <Globe className="h-4 w-4" />
+                <span>{locale === "en" ? "CN" : "EN"}</span>
+              </button>
+
+              {/* Theme Toggle */}
+              {mounted && (
+                <button
+                  onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                  className="flex h-9 w-9 items-center justify-center rounded-lg border border-border text-foreground transition-all hover:bg-secondary"
+                  aria-label="Toggle theme"
+                >
+                  {theme === "dark" ? (
+                    <Sun className="h-4 w-4" />
+                  ) : (
+                    <Moon className="h-4 w-4" />
+                  )}
+                </button>
+              )}
+
+              {/* CTA */}
+              <a
+                href="#contact"
+                className="hidden rounded-lg bg-primary px-4 py-2 text-lg font-semibold text-primary-foreground transition-all hover:opacity-90 sm:block"
+              >
+                {navT.getStarted}
+              </a>
+
+              {/* Mobile Menu Toggle */}
+              <button
+                onClick={() => setMobileOpen(!mobileOpen)}
+                className="flex h-9 w-9 items-center justify-center rounded-lg border border-border text-foreground lg:hidden"
+                aria-label="Toggle menu"
+              >
+                {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              </button>
+            </div>
           </div>
-        </Link>
-
-        {/* Desktop Nav */}
-        <div className="hidden items-center gap-1 lg:flex">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={cn(
-                "relative px-4 py-2 text-sm font-medium transition-colors rounded-lg",
-                pathname === link.href
-                  ? "text-primary"
-                  : "text-muted-foreground hover:text-foreground"
-              )}
-            >
-              {link.label}
-              {pathname === link.href && (
-                <span className="absolute bottom-0 left-1/2 h-0.5 w-6 -translate-x-1/2 rounded-full bg-primary" />
-              )}
-            </Link>
-          ))}
         </div>
+      </motion.header>
 
-        <div className="hidden items-center gap-4 lg:flex">
-          {/* Language Switcher */}
-          <Button variant="ghost" size="icon" onClick={() => setLang(lang === "en" ? "zh" : "en")}>
-            <Languages className="h-5 w-5" />
-          </Button>
-
-          {/* Theme Toggle */}
-          {mounted && (
-            <Button variant="ghost" size="icon" onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
-              {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-            </Button>
-          )}
-
-          <Button asChild className="rounded-full">
-            <Link href="/contact">
-              {t.nav.getInTouch} <ArrowRight className="ml-1 h-4 w-4" />
-            </Link>
-          </Button>
-        </div>
-
-        {/* Mobile Toggle */}
-        <div className="flex items-center gap-4 lg:hidden">
-          <Button variant="ghost" size="icon" onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
-            {mounted && (theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />)}
-          </Button>
-          <button onClick={() => setIsOpen(!isOpen)} className="text-foreground">
-            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
-        </div>
-      </nav>
-
-      {/* Mobile Nav */}
-      {isOpen && (
-        <div className="fixed inset-0 z-40 bg-background flex flex-col items-center justify-center gap-6 lg:hidden">
-          <Button variant="outline" onClick={() => setLang(lang === "en" ? "zh" : "en")} className="mb-4">
-            {lang === "en" ? "中文" : "English"}
-          </Button>
-          {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} onClick={() => setIsOpen(false)} className="text-2xl font-semibold">
-              {link.label}
-            </Link>
-          ))}
-          <Button asChild size="lg" className="mt-4 rounded-full bg-primary text-primary-foreground hover:bg-primary/90">
-            <Link href="/contact" onClick={() => setIsOpen(false)}>
-              Get in Touch
-              <ArrowRight className="ml-1 h-4 w-4" />
-            </Link>
-          </Button>
-        </div>
-      )
-      }
-    </header>
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.2 }}
+            className="glass-effect fixed inset-x-0 top-16 z-40 border-b border-border bg-background/95 p-4 lg:hidden"
+          >
+            <nav className="flex flex-col gap-1">
+              {navLinks.map((link) => (
+                <a
+                  key={link.key}
+                  href={link.href}
+                  onClick={() => setMobileOpen(false)}
+                  className="rounded-lg px-4 py-3 text-lg font-medium text-foreground transition-colors hover:bg-secondary"
+                >
+                  {navT[link.key as keyof typeof navT]}
+                </a>
+              ))}
+              <a
+                href="#contact"
+                onClick={() => setMobileOpen(false)}
+                className="mt-2 rounded-lg bg-primary px-4 py-3 text-center text-lg font-semibold text-primary-foreground"
+              >
+                {navT.getStarted}
+              </a>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   )
 }

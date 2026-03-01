@@ -1,23 +1,29 @@
-import { HeroSection } from "@/components/home/hero-section"
-import { LogoMarquee } from "@/components/home/logo-marquee"
-import { ServicesOverview } from "@/components/home/services-overview"
-import { CaseStudies } from "@/components/home/case-studies"
-import { Testimonials } from "@/components/home/testimonials"
-import { EngagementModels } from "@/components/home/engagement-models"
-import { BlogPreview } from "@/components/home/blog-preview"
-import { CtaSection } from "@/components/home/cta-section"
+"use client"
 
-export default function HomePage() {
+import { Navbar } from "@/components/navbar"
+import { HeroSection } from "@/components/hero-section"
+import { AboutSection } from "@/components/about-section"
+import { ServicesSection } from "@/components/services-section"
+import { StatsSection } from "@/components/stats-section"
+import { PortfolioSection } from "@/components/portfolio-section"
+import { TeamSection } from "@/components/team-section"
+import { TestimonialsSection } from "@/components/testimonials-section"
+import { ContactSection } from "@/components/contact-section"
+import { Footer } from "@/components/footer"
+
+export default function Home() {
   return (
-    <>
+    <main className="min-h-screen">
+      <Navbar />
       <HeroSection />
-      <LogoMarquee />
-      <ServicesOverview />
-      <CaseStudies />
-      <Testimonials />
-      <EngagementModels />
-      <BlogPreview />
-      <CtaSection />
-    </>
+      <AboutSection />
+      <ServicesSection />
+      <StatsSection />
+      <PortfolioSection />
+      <TeamSection />
+      <TestimonialsSection />
+      <ContactSection />
+      <Footer />
+    </main>
   )
 }
