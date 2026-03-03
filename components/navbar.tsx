@@ -48,15 +48,15 @@ export function Navbar() {
           <div className="flex h-16 items-center justify-between lg:h-20">
             {/* Logo */}
             <a href="#home" className="flex items-center gap-2">
-              <Image className="inline-block" src={"/logo.png"} width={50} height={50} alt="logo" />
-              <div className="flex flex-col">
+              <Image className="inline-block" src={"/logo.png"} width={100} height={100} alt="logo" />
+              {/* <div className="flex flex-col">
                 <span className="text-lg font-bold leading-tight text-foreground">
                   C3
                 </span>
                 <span className="text-sm leading-tight text-muted-foreground">
                   Core
                 </span>
-              </div>
+              </div> */}
             </a>
 
             {/* Desktop Nav */}
@@ -65,7 +65,7 @@ export function Navbar() {
                 <a
                   key={link.key}
                   href={link.href}
-                  className="rounded-lg px-3 py-2 text-lg font-medium text-foreground transition-colors hover:bg-secondary hover:text-primary"
+                  className="rounded-lg px-3 py-2 text-2xl font-medium text-foreground transition-colors hover:bg-secondary hover:text-primary"
                 >
                   {navT[link.key as keyof typeof navT]}
                 </a>
@@ -102,7 +102,7 @@ export function Navbar() {
               {/* CTA */}
               <a
                 href="#contact"
-                className="hidden rounded-lg bg-primary px-4 py-2 text-lg font-semibold text-primary-foreground transition-all hover:opacity-90 sm:block"
+                className="hidden rounded-lg bg-primary px-4 py-2 text-2xl font-semibold text-primary-foreground transition-all hover:opacity-90 sm:block"
               >
                 {navT.getStarted}
               </a>
@@ -136,7 +136,7 @@ export function Navbar() {
                   key={link.key}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="rounded-lg px-4 py-3 text-lg font-medium text-foreground transition-colors hover:bg-secondary"
+                  className="rounded-lg px-4 py-3 text-2xl font-medium text-foreground transition-colors hover:bg-secondary"
                 >
                   {navT[link.key as keyof typeof navT]}
                 </a>
@@ -144,7 +144,7 @@ export function Navbar() {
               <a
                 href="#contact"
                 onClick={() => setMobileOpen(false)}
-                className="mt-2 rounded-lg bg-primary px-4 py-3 text-center text-lg font-semibold text-primary-foreground"
+                className="mt-2 rounded-lg bg-primary px-4 py-3 text-center text-2xl font-semibold text-primary-foreground"
               >
                 {navT.getStarted}
               </a>

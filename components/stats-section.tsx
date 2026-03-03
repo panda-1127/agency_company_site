@@ -53,12 +53,12 @@ export function StatsSection() {
         }}
       />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto max-w-7xl p-4 sm:px-6 lg:px-8">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="mb-12 text-center text-3xl font-bold text-white sm:text-4xl"
+          className="mb-20 text-center text-xl font-bold text-white sm:text-4xl"
         >
           {t.stats.title}
         </motion.h2>
@@ -75,7 +75,7 @@ export function StatsSection() {
               <div className="text-4xl font-bold text-white sm:text-5xl">
                 <AnimatedCounter value={stat.value} inView={isInView} />
               </div>
-              <div className="mt-2 text-sm font-medium text-white/80">
+              <div className="mt-2 text-2xl font-medium text-white/80">
                 {stat.label}
               </div>
             </motion.div>

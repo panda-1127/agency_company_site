@@ -34,7 +34,7 @@ export function AboutSection() {
           transition={{ duration: 0.5 }}
           className="mb-4 text-center"
         >
-          <span className="inline-block rounded-full bg-primary/10 px-4 py-1.5 text-lg font-semibold text-primary">
+          <span className="inline-block rounded-full bg-primary/10 px-4 py-1.5 text-xl font-semibold text-primary">
             {t.about.tag}
           </span>
         </motion.div>
@@ -43,7 +43,7 @@ export function AboutSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="mx-auto mb-16 max-w-3xl text-balance text-center text-3xl font-bold text-foreground sm:text-4xl lg:text-5xl"
+          className="mx-auto mb-16 max-w-3xl text-balance text-center text-4xl font-bold text-foreground sm:text-5xl lg:text-6xl"
         >
           {t.about.title}
         </motion.h2>
@@ -61,8 +61,8 @@ export function AboutSection() {
                 src="/images/about.jpg"
                 alt="C3 Core team collaborating in modern office"
                 width={600}
-                height={500}
-                className="h-[500px] w-full object-cover"
+                height={700}
+                className="h-[700px] w-full object-cover"
                 suppressHydrationWarning
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
@@ -85,10 +85,10 @@ export function AboutSection() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.3 }}
           >
-            <p className="mb-4 text-lg leading-relaxed text-muted-foreground">
+            <p className="mb-4 text-2xl leading-relaxed text-muted-foreground">
               {t.about.description}
             </p>
-            <p className="mb-8 text-lg leading-relaxed text-muted-foreground">
+            <p className="mb-8 text-2xl leading-relaxed text-muted-foreground">
               {t.about.description2}
             </p>
 
@@ -126,10 +126,10 @@ export function AboutSection() {
                   >
                     <item.icon className="h-5 w-5" />
                   </div>
-                  <h3 className="mb-1 text-lg font-semibold text-foreground">
+                  <h3 className="mb-1 text-2xl font-semibold text-foreground">
                     {item.title}
                   </h3>
-                  <p className="text-lg leading-relaxed text-muted-foreground">
+                  <p className="text-xl leading-relaxed text-muted-foreground">
                     {item.desc}
                   </p>
                 </motion.div>

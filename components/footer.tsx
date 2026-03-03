@@ -5,10 +5,10 @@ import { Github, Linkedin, ArrowUp } from "lucide-react"
 import { useState } from "react"
 import Image from "next/image"
 
-const socialLinks = [
-  { icon: Github, href: "https://github.com", label: "GitHub" },
-  { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-]
+// const socialLinks = [
+//   { icon: Github, href: "https://github.com", label: "GitHub" },
+//   { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
+// ]
 
 export function Footer() {
   const { t } = useLanguage()
@@ -34,19 +34,19 @@ export function Footer() {
           <div className="lg:col-span-1">
             <div className="mb-4 flex items-center gap-2">
               <Image className="inline-block" src={"/logo.png"} width={50} height={50} alt="logo" />
-              <div className="flex flex-col">
-                <span className="text-lg font-bold leading-tight text-foreground">
+              {/* <div className="flex flex-col">
+                <span className="text-xl font-bold leading-tight text-foreground">
                   C3
                 </span>
                 <span className="text-md leading-tight text-muted-foreground">
                   Core
                 </span>
-              </div>
+              </div> */}
             </div>
-            <p className="mb-6 text-lg leading-relaxed text-muted-foreground">
+            <p className="mb-6 text-xl leading-relaxed text-muted-foreground">
               {t.footer.description}
             </p>
-            <div className="flex gap-3">
+            {/* <div className="flex gap-3">
               {socialLinks.map((social, i) => (
                 <a
                   key={i}
@@ -59,12 +59,12 @@ export function Footer() {
                   <social.icon className="h-4 w-4" />
                 </a>
               ))}
-            </div>
+            </div> */}
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="mb-4 text-lg font-semibold text-foreground">
+            <h3 className="mb-4 text-xl font-semibold text-foreground">
               {t.footer.quickLinks}
             </h3>
             <ul className="flex flex-col gap-2.5">
@@ -79,7 +79,7 @@ export function Footer() {
                 <li key={i}>
                   <a
                     href={link.href}
-                    className="text-lg text-muted-foreground transition-colors hover:text-primary"
+                    className="text-xl text-muted-foreground transition-colors hover:text-primary"
                   >
                     {link.label}
                   </a>
@@ -90,7 +90,7 @@ export function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="mb-4 text-lg font-semibold text-foreground">
+            <h3 className="mb-4 text-xl font-semibold text-foreground">
               {t.footer.services}
             </h3>
             <ul className="flex flex-col gap-2.5">
@@ -98,7 +98,7 @@ export function Footer() {
                 <li key={i}>
                   <a
                     href="#services"
-                    className="text-lg text-muted-foreground transition-colors hover:text-primary"
+                    className="text-xl text-muted-foreground transition-colors hover:text-primary"
                   >
                     {service.title}
                   </a>
@@ -109,10 +109,10 @@ export function Footer() {
 
           {/* Newsletter */}
           <div>
-            <h3 className="mb-4 text-lg font-semibold text-foreground">
+            <h3 className="mb-4 text-xl font-semibold text-foreground">
               {t.footer.newsletter}
             </h3>
-            <p className="mb-4 text-lg text-muted-foreground">
+            <p className="mb-4 text-xl text-muted-foreground">
               {t.footer.newsletterText}
             </p>
             <form onSubmit={handleSubscribe} className="flex gap-2">
@@ -122,11 +122,11 @@ export function Footer() {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder={t.footer.emailPlaceholder}
                 required
-                className="w-full rounded-lg border border-input bg-background px-3 py-2 text-lg text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+                className="w-full rounded-lg border border-input bg-background px-3 py-2 text-xl text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
               />
               <button
                 type="submit"
-                className="shrink-0 rounded-lg bg-primary px-4 py-2 text-lg font-semibold text-primary-foreground transition-all hover:opacity-90"
+                className="shrink-0 rounded-lg bg-primary px-4 py-2 text-xl font-semibold text-primary-foreground transition-all hover:opacity-90"
               >
                 {t.footer.subscribe}
               </button>
@@ -136,19 +136,13 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 sm:flex-row">
-          <p className="text-lg text-muted-foreground">
+          <p className="text-xl text-muted-foreground">
             {"© 2025 C3 Core Consulting. "}{t.footer.rights}
           </p>
           <div className="flex items-center gap-6">
             <a
-              href="#"
-              className="text-lg text-muted-foreground transition-colors hover:text-primary"
-            >
-              {t.footer.privacy}
-            </a>
-            <a
-              href="#"
-              className="text-lg text-muted-foreground transition-colors hover:text-primary"
+              href="#contact"
+              className="text-xl text-muted-foreground transition-colors hover:text-primary"
             >
               {t.footer.terms}
             </a>

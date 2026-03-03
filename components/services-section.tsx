@@ -48,7 +48,7 @@ export function ServicesSection() {
           transition={{ duration: 0.5 }}
           className="mb-4 text-center"
         >
-          <span className="inline-block rounded-full bg-accent/10 px-4 py-1.5 text-lg font-semibold text-accent">
+          <span className="inline-block rounded-full bg-accent/10 px-4 py-1.5 text-xl font-semibold text-accent">
             {t.services.tag}
           </span>
         </motion.div>
@@ -66,7 +66,7 @@ export function ServicesSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.15 }}
-          className="mx-auto mb-16 max-w-2xl text-center text-lg leading-relaxed text-muted-foreground"
+          className="mx-auto mb-16 max-w-2xl text-center text-2xl leading-relaxed text-muted-foreground"
         >
           {t.services.subtitle}
         </motion.p>
@@ -93,16 +93,16 @@ export function ServicesSection() {
                   <Icon className="h-6 w-6" />
                 </div>
 
-                <h3 className="mb-2 text-lg font-semibold text-foreground">
+                <h3 className="mb-2 text-2xl font-semibold text-foreground">
                   {service.title}
                 </h3>
-                <p className="text-lg leading-relaxed text-muted-foreground">
+                <p className="text-xl leading-relaxed text-muted-foreground">
                   {service.description}
                 </p>
 
                 <a
                   href="#contact"
-                  className="mt-4 inline-flex items-center text-lg font-medium text-primary opacity-0 transition-opacity group-hover:opacity-100"
+                  className="mt-4 inline-flex items-center text-xl font-medium text-primary opacity-0 transition-opacity group-hover:opacity-100"
                 >
                   Learn more
                   <svg

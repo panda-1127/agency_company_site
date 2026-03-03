@@ -16,19 +16,15 @@ const projectImages = [
 ]
 
 const categoryColors: Record<string, string> = {
-  "E-Commerce": "bg-primary/10 text-primary",
-  "FinTech": "bg-[#10b981]/10 text-[#10b981]",
-  "IoT / Smart City": "bg-accent/10 text-accent",
-  "Healthcare": "bg-[#8b5cf6]/10 text-[#8b5cf6]",
-  "Enterprise": "bg-[#f59e0b]/10 text-[#f59e0b]",
-  "Social Media": "bg-primary/10 text-primary",
+  "ECommerce": "bg-primary/10 text-primary",
+  "AI & Machine Learning": "bg-[#10b981]/10 text-[#10b981]",
+  "Healthcare": "bg-[#f59e0b]/10 text-[#f59e0b]",
+  "Blockchain": "bg-[#8b5cf6]/10 text-[#8b5cf6]",
   // Chinese categories
-  "\u7535\u5b50\u5546\u52a1": "bg-primary/10 text-primary",
-  "\u91d1\u878d\u79d1\u6280": "bg-[#10b981]/10 text-[#10b981]",
-  "\u7269\u8054\u7f51/\u667a\u6167\u57ce\u5e02": "bg-accent/10 text-accent",
-  "\u533b\u7597\u5065\u5eb7": "bg-[#8b5cf6]/10 text-[#8b5cf6]",
-  "\u4f01\u4e1a\u7ea7": "bg-[#f59e0b]/10 text-[#f59e0b]",
-  "\u793e\u4ea4\u5a92\u4f53": "bg-primary/10 text-primary",
+  "\u7535\u5B50\u5546\u52A1": "bg-primary/10 text-primary",
+  "\u4eba\u5de5\u667a\u80fd\u4e0e\u673a\u5668\u5b66\u4e60": "bg-[#10b981]/10 text-[#10b981]",
+  "\u536b\u751f\u4fdd\u5065": "bg-[#f59e0b]/10 text-[#f59e0b]",
+  "\u533a\u5757\u94fe": "bg-[#8b5cf6]/10 text-[#8b5cf6]",
 }
 
 export function PortfolioSection() {
@@ -46,7 +42,7 @@ export function PortfolioSection() {
           transition={{ duration: 0.5 }}
           className="mb-4 text-center"
         >
-          <span className="inline-block rounded-full bg-[#f59e0b]/10 px-4 py-1.5 text-lg font-semibold text-[#f59e0b]">
+          <span className="inline-block rounded-full bg-[#f59e0b]/10 px-4 py-1.5 text-xl font-semibold text-[#f59e0b]">
             {t.portfolio.tag}
           </span>
         </motion.div>
@@ -55,7 +51,7 @@ export function PortfolioSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="mx-auto mb-4 max-w-2xl text-balance text-center text-3xl font-bold text-foreground sm:text-4xl lg:text-5xl"
+          className="mx-auto mb-4 max-w-2xl text-balance text-center text-4xl font-bold text-foreground sm:text-4xl lg:text-5xl"
         >
           {t.portfolio.title}
         </motion.h2>
@@ -64,7 +60,7 @@ export function PortfolioSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.15 }}
-          className="mx-auto mb-16 max-w-2xl text-center text-lg leading-relaxed text-muted-foreground"
+          className="mx-auto mb-16 max-w-2xl text-center text-2xl leading-relaxed text-muted-foreground"
         >
           {t.portfolio.subtitle}
         </motion.p>
@@ -104,7 +100,7 @@ export function PortfolioSection() {
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 rounded-xl bg-primary px-5 py-2.5 text-lg font-semibold text-primary-foreground transition-transform hover:scale-105"
+                    className="flex items-center gap-2 rounded-xl bg-primary px-5 py-2.5 text-xl font-semibold text-primary-foreground transition-transform hover:scale-105"
                   >
                     {t.portfolio.viewProject}
                     <ExternalLink className="h-4 w-4" />
@@ -114,9 +110,8 @@ export function PortfolioSection() {
                 {/* Category Badge */}
                 <div className="absolute left-3 top-3">
                   <span
-                    className={`rounded-full px-3 py-1 text-xs font-semibold ${
-                      categoryColors[project.category] || "bg-secondary text-secondary-foreground"
-                    }`}
+                    className={`rounded-full px-3 py-1 text-lg font-semibold ${categoryColors[project.category] || "bg-secondary text-secondary-foreground"
+                      }`}
                   >
                     {project.category}
                   </span>
@@ -125,10 +120,10 @@ export function PortfolioSection() {
 
               {/* Content */}
               <div className="p-5">
-                <h3 className="mb-2 text-lg font-semibold text-foreground">
+                <h3 className="mb-2 text-2xl font-semibold text-foreground">
                   {project.title}
                 </h3>
-                <p className="mb-4 text-lg leading-relaxed text-muted-foreground">
+                <p className="mb-4 text-xl leading-relaxed text-muted-foreground">
                   {project.description}
                 </p>
 
@@ -137,7 +132,7 @@ export function PortfolioSection() {
                   {project.tech.map((tech, j) => (
                     <span
                       key={j}
-                      className="rounded-md bg-secondary px-2 py-1 text-xs font-medium text-secondary-foreground"
+                      className="rounded-md bg-secondary px-2 py-1 text-lg font-medium text-secondary-foreground"
                     >
                       {tech}
                     </span>
@@ -149,7 +144,7 @@ export function PortfolioSection() {
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-4 inline-flex items-center gap-1 text-lg font-medium text-primary transition-colors hover:underline"
+                  className="mt-4 inline-flex items-center gap-1 text-xl font-medium text-primary transition-colors hover:underline"
                 >
                   {t.portfolio.viewProject}
                   <ArrowRight className="h-3.5 w-3.5" />

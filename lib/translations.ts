@@ -100,52 +100,52 @@ export const translations = {
       viewAll: "View All Projects",
       items: [
         {
-          title: "ShopStream E-Commerce Platform",
-          category: "E-Commerce",
-          description:
-            "A high-performance e-commerce platform handling 10M+ monthly active users with real time inventory management and AI-powered recommendations.",
-          tech: ["React", "Node.js", "MongoDB", "Redis"],
-          link: "https://shopify.com",
-        },
-        {
-          title: "FinVault Digital Banking",
-          category: "FinTech",
-          description:
-            "A comprehensive digital banking solution with secure transaction processing, KYC verification, and blockchain-based audit trails.",
-          tech: ["Vue.js", "Go", "PostgreSQL", "Blockchain"],
-          link: "https://stripe.com",
-        },
-        {
-          title: "AI Chatbot Platform",
+          title: "Nerobot | The LLM powered scraper for your LLM Apps",
           category: "AI & Machine Learning",
           description:
-            "Botsify is built for agencies, consultants, and businesses that want to deploy or sell AI agents without building software from scratch.",
-          tech: ["Python", "TensorFlow", "Chatbot", "Workflow"],
-          link: "https://botsify.com/",
+            "Nero AI is an online artificial intelligence-powered media enhancement platform that uses AI to improve and transform images and videos. Its tools help users upscale, sharpen, restore, colorize, and edit visual content",
+          tech: ["React", "SasS", "Node.js", "PyTorch"],
+          link: "https://www.nero.ai/",
         },
         {
-          title: "MedAI Diagnostic System",
-          category: "Healthcare",
-          description:
-            "AI-powered medical imaging analysis platform achieving 98.5% accuracy in early disease detection, deployed across 50+ hospitals.",
-          tech: ["PyTorch", "FastAPI", "React", "DICOM"],
-          link: "https://cloud.google.com/solutions/healthcare",
-        },
-        {
-          title: "CloudERP Enterprise Suite",
-          category: "Enterprise",
-          description:
-            "Modular cloud ERP system for manufacturing enterprises with supply chain optimization and predictive maintenance capabilities.",
-          tech: ["Java", "Spring Boot", "Kubernetes", "Kafka"],
-          link: "https://azure.microsoft.com",
-        },
-        {
-          title: "Zkrollup Defi Platform",
+          title: "Stabble | Solana's first frictionless liquidity",
           category: "Blockchain",
           description:
-            "Koi is a DeFi platform, serving as liquidity hub for all projects on zkSync. Koi's dynamic dApp features both concentrated and standard pool AMM DEX, complete with limit orders, farming platform, and bond platform.  Experience the evolution of DeFi 2.0 with low fees and gas less swaps.",
-          tech: ["Solidity", "Hardhat", "Truffle", "Ethers.js"],
-          link: "https://koi.finance/",
+            "stabble is a protocol revolutionizing liquidity pools by introducing protocol-managed and arbitrage pools. This allows stabble to tackle critical inefficiencies prevalent within Solana's decentralized exchanges.",
+          tech: ["Next.js", "Rust", "Solana SDK", "Solana Web3.js"],
+          link: "https://stabble.org/",
+        },
+        {
+          title: "Brandwise | AI Customer Support for Ecommerce",
+          category: "Ecommerce",
+          description:
+            "Resolve customer inquiries instantly across email, comments, and DMs with our AI agent built for DTC brands",
+          tech: ["Next.js", "Node.js", "External LLMs", "Shopify API"],
+          link: "https://brandwise.ai/",
+        },
+        {
+          title: "MOD Pizza | All Pizzas Welcome",
+          category: "Ecommerce",
+          description:
+            "Create your own personal pizza at MOD Pizza today! And it's always unlimited toppings for one price - go make your masterpiece.",
+          tech: ["WP Engine", "Cloudflare", "Google Tag Manager", "SAP solutions"],
+          link: "https://modpizza.com/",
+        },
+        {
+          title: "The Hundreds",
+          category: "Ecommerce",
+          description:
+            "The Hundreds is a community-based streetwear brand and media platform with an emphasis on People Over Product.",
+          tech: ["Next.js", "Shopify", "Klaviyo", "Webpack"],
+          link: "https://thehundreds.com/",
+        },
+        {
+          title: "Yolohealth",
+          category: "Healthcare",
+          description:
+            "Fuel your weight loss with members who share similar goals and interests, build your own community or join one with a similar interest as yours. ",
+          tech: ["React Native", "Firebase", "Node.js", "AWS"],
+          link: "https://yolohealth.app/",
         },
       ],
     },
@@ -248,7 +248,6 @@ export const translations = {
       emailPlaceholder: "Enter your email",
       subscribe: "Subscribe",
       rights: "All rights reserved.",
-      privacy: "Privacy Policy",
       terms: "Terms of Service",
     },
   },
@@ -351,52 +350,52 @@ export const translations = {
       viewAll: "\u67e5\u770b\u6240\u6709\u9879\u76ee",
       items: [
         {
-          title: "ShopStream\u7535\u5546\u5e73\u53f0",
-          category: "\u7535\u5b50\u5546\u52a1",
-          description:
-            "\u4e00\u4e2a\u9ad8\u6027\u80fd\u7535\u5546\u5e73\u53f0\uff0c\u5904\u74061000\u4e07+\u6708\u6d3b\u7528\u6237\uff0c\u5177\u5907\u5b9e\u65f6\u5e93\u5b58\u7ba1\u7406\u548cAI\u63a8\u8350\u529f\u80fd\u3002",
-          tech: ["React", "Node.js", "MongoDB", "Redis"],
-          link: "https://shopify.com",
-        },
-        {
-          title: "FinVault\u6570\u5b57\u94f6\u884c",
-          category: "\u91d1\u878d\u79d1\u6280",
-          description:
-            "\u5168\u9762\u7684\u6570\u5b57\u94f6\u884c\u89e3\u51b3\u65b9\u6848\uff0c\u5177\u5907\u5b89\u5168\u4ea4\u6613\u5904\u7406\u3001KYC\u9a8c\u8bc1\u548c\u57fa\u4e8e\u533a\u5757\u94fe\u7684\u5ba1\u8ba1\u8ddf\u8e2a\u3002",
-          tech: ["Vue.js", "Go", "PostgreSQL", "Blockchain"],
-          link: "https://stripe.com",
-        },
-        {
-          title: "AI\u804a\u5929\u673a\u5668\u4eba\u5e73\u53f0 ",
+          title: "Nerobot | \u9002\u7528\u4e8e LLM \u5e94\u7528\u7684 LLM \u9a71\u52a8\u578b\u722c\u866b",
           category: "\u4eba\u5de5\u667a\u80fd\u4e0e\u673a\u5668\u5b66\u4e60",
           description:
-            "Botsify \u662f\u4e3a\u5e0c\u671b\u90e8\u7f72\u6216\u9500\u552e\u0020\u0041\u0049\u0020\u4ee3\u7406\u800c\u65e0\u9700\u4ece\u5934\u5f00\u59cb\u6784\u5efa\u8f6f\u4ef6\u7684\u673a\u6784\u3001\u987e\u95ee\u548c\u4f01\u4e1a\u800c\u6253\u9020\u7684\u3002",
-          tech: ["Python", "TensorFlow", "Chatbot", "Workflow"],
-          link: "https://botsify.com/",
+            "Nero AI \u662f\u4e00\u4e2a\u5728\u7ebf\u4eba\u5de5\u667a\u80fd\u5a92\u4f53\u589e\u5f3a\u5e73\u53f0, \u5b83\u5229\u7528\u4eba\u5de5\u667a\u80fd\u6280\u672f\u6765\u6539\u5584\u548c\u8f6c\u6362\u56fe\u50cf\u548c\u89c6\u9891\u3002\u5176\u5de5\u5177\u53ef\u4ee5\u5e2e\u52a9\u7528\u6237\u653e\u5927\u3001\u9510\u5316\u3001\u4fee\u590d\u3001\u7740\u8272\u548c\u7f16\u8f91\u89c6\u89c9\u5185\u5bb9\u3002 ",
+          tech: ["React", "SasS", "Node.js", "PyTorch"],
+          link: "https://www.nero.ai/",
         },
         {
-          title: "MedAI\u8bca\u65ad\u7cfb\u7edf",
-          category: "\u533b\u7597\u5065\u5eb7",
-          description:
-            "AI\u9a71\u52a8\u7684\u533b\u5b66\u5f71\u50cf\u5206\u6790\u5e73\u53f0\uff0c\u65e9\u671f\u75be\u75c5\u68c0\u6d4b\u51c6\u786e\u7387\u8fbe98.5%\uff0c\u5df2\u572850+\u5bb6\u533b\u9662\u90e8\u7f72\u3002",
-          tech: ["PyTorch", "FastAPI", "React", "DICOM"],
-          link: "https://cloud.google.com/solutions/healthcare",
-        },
-        {
-          title: "CloudERP\u4f01\u4e1a\u5957\u4ef6",
-          category: "\u4f01\u4e1a\u7ea7",
-          description:
-            "\u9762\u5411\u5236\u9020\u4f01\u4e1a\u7684\u6a21\u5757\u5316\u4e91ERP\u7cfb\u7edf\uff0c\u5177\u5907\u4f9b\u5e94\u94fe\u4f18\u5316\u548c\u9884\u6d4b\u6027\u7ef4\u62a4\u529f\u80fd\u3002",
-          tech: ["Java", "Spring Boot", "Kubernetes", "Kafka"],
-          link: "https://azure.microsoft.com",
-        },
-        {
-          title: "Zkrollup DeFi \u5e73\u53f0",
+          title: "Stabble | Solana \u7684\u9996\u4e2a\u65e0\u6469\u64e6\u6d41\u52a8\u6027",
           category: "\u533a\u5757\u94fe",
           description:
-            "\u004b\u006f\u0069\u0020\u662f\u4e00\u4e2a\u0020\u0044\u0065\u0046\u0069\u0020\u5e73\u53f0\uff0c\u4e3a\u0020\u007a\u006b\u0053\u0079\u006e\u0063\u0020\u4e0a\u7684\u6240\u6709\u9879\u76ee\u63d0\u4f9b\u6d41\u52a8\u6027\u3002\u004b\u006f\u0069\u0020\u7684\u52a8\u6001\u0020\u0064\u0041\u0070\u0070\u0020\u5305\u542b\u96c6\u4e2d\u5f0f\u548c\u6807\u51c6\u6c60\u0020\u0041\u004d\u0044\u0020\u0044\u0045\u0058\uff0c\u5e76\u914d\u5907\u9650\u4ef7\u5355\u3001\u6316\u77ff\u5e73\u53f0\u548c\u503a\u5238\u5e73\u53f0\u3002\u4f53\u9a8c\u0020\u0044\u0065\u0046\u0069\u0020\u0032\u002e\u0030\u0020\u7684\u5168\u65b0\u6f14\u8fdb\uff0c\u5e74\u53d7\u4f4e\u624b\u7eed\u8d39\u548c\u514d\u0020\u0067\u0061\u0073\u0020\u8d39\u7684\u4e92\u6362\u670d\u52a1\u3002",
-          tech: ["Solidity", "Hardhat", "Truffle", "Ethers.js"],
-          link: "https://koi.finance/",
+            "Stabble \u534f\u8bae\u901a\u8fc7\u5f15\u5165\u534f\u8bae\u7ba1\u7406\u7684\u6d41\u52a8\u6027\u6c60\u548c\u5957\u5229\u6c60, \u5f7b\u5e95\u9769\u65b0\u4e86\u6d41\u52a8\u6027\u6c60. \u89e3\u51b3 Solana \u53bb\u4e2d\u5fc3\u5316\u4ea4\u6613\u6240\u4e2d\u666e\u904d\u5b58\u5728\u7684\u5173\u952e\u6548\u7387\u4f4e\u4e0b\u95ee\u9898",
+          tech: ["Next.js", "Rust", "Solana SDK", "Solana Web3.js"],
+          link: "https://stabble.org/",
+        },
+        {
+          title: "Brandwise | \u7535\u5b50\u5546\u52a1\u4eba\u5de5\u667a\u80fd\u5ba2\u6237\u652f\u6301 ",
+          category: "\u7535\u5b50\u5546\u52a1",
+          description:
+            "\u5229\u7528\u6211\u4eec\u4e13\u4e3a DTC \u54c1\u724c\u6253\u9020\u7684 AI \u4ee3\u7406, \u5373\u65f6\u89e3\u51b3\u5ba2\u6237\u901a\u8fc7\u7535\u5b50\u90ae\u4ef6, \u8bc4\u8bba\u548c\u79c1\u4fe1\u63d0\u51fa\u7684\u7591\u95ee",
+          tech: ["Next.js", "Node.js", "External LLMs", "Shopify API"],
+          link: "https://brandwise.ai/",
+        },
+        {
+          title: "MOD Pizza | \u6b22\u8fce\u6240\u6709\u62ab\u8428",
+          category: "\u7535\u5b50\u5546\u52a1",
+          description:
+            "\u4eca\u5929\u5c31\u6765 MOD Pizza \u6253\u9020\u4f60\u4e13\u5c5e\u7684\u4e2a\u6027\u5316\u62ab\u8428\u5427\uff01 \u914d\u6599\u65e0\u9650\u91cf\u4f9b\u5e94, \u4ef7\u683c\u7edf\u4e00\u2014\u5feb\u6765\u521b\u4f5c\u4f60\u7684\u6770\u4f5c\u5427\uff01",
+          tech: ["WP Engine", "Cloudflare", "Google Tag Manager", "SAP solutions"],
+          link: "https://modpizza.com/",
+        },
+        {
+          title: "The Hundreds",
+          category: "\u7535\u5b50\u5546\u52a1",
+          description:
+            "The Hundreds \u662f\u4e00\u4e2a\u4ee5\u793e\u533a\u4e3a\u57fa\u7840\u7684\u8857\u5934\u670d\u9970\u54c1\u724c\u548c\u5a92\u4f53\u5e73\u53f0, \u5f3a\u8c03\u4ee5\u4eba\u4e3a\u672c\u800c\u975e\u4ee5\u4ea7\u54c1\u4e3a\u672c\u3002",
+          tech: ["Next.js", "Shopify", "Klaviyo", "Webpack"],
+          link: "https://thehundreds.com/",
+        },
+        {
+          title: "Yolohealth",
+          category: "\u536b\u751f\u4fdd\u5065",
+          description:
+            "\u4e0e\u62e5\u6709\u76f8\u4f3c\u76ee\u6807\u548c\u5174\u8da3\u7684\u6210\u5458\u4e00\u8d77\u52a9\u529b\u4f60\u7684\u51cf\u80a5\u4e4b\u65c5, \u5efa\u7acb\u4f60\u81ea\u5df1\u7684\u793e\u533a\u6216\u52a0\u5165\u4e00\u4e2a\u4e0e\u4f60\u5174\u8da3\u76f8\u6295\u7684\u793e\u533a\u3002",
+          tech: ["React Native", "Firebase", "Node.js", "AWS"],
+          link: "https://yolohealth.app/",
         },
       ],
     },

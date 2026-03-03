@@ -1,14 +1,14 @@
 "use client"
 
-import dynamic from "next/dynamic"
+// import dynamic from "next/dynamic"
 import { useLanguage } from "@/lib/language-context"
 import { motion } from "framer-motion"
 import { ArrowRight, Play } from "lucide-react"
 
-const HeroScene = dynamic(
-  () => import("./hero-scene").then((mod) => ({ default: mod.HeroScene })),
-  { ssr: false }
-)
+// const HeroScene = dynamic(
+//   () => import("./hero-scene").then((mod) => ({ default: mod.HeroScene })),
+//   { ssr: false }
+// )
 
 export function HeroSection() {
   const { t } = useLanguage()
@@ -23,11 +23,11 @@ export function HeroSection() {
         className="absolute inset-0 z-0 bg-cover bg-center"
         style={{ backgroundImage: "url(/images/hero-bg.jpg)" }}
       >
-        <div className="absolute inset-0 bg-background/70 dark:bg-background/70" />
+        <div className="absolute inset-0 bg-background/80 dark:bg-background/80" />
       </div>
 
       {/* 3D Scene */}
-      <HeroScene />
+      {/* <HeroScene /> */}
 
       {/* Content */}
       <div className="relative z-10 mx-auto w-full max-w-7xl px-4 py-32 sm:px-6 lg:px-8">
@@ -52,14 +52,14 @@ export function HeroSection() {
               className="mb-6 text-balance text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl"
             >
               {t.hero.title1}{" "}
-              <span className="text-gradient">{t.hero.title2}</span>
+              <span className="text-4xl text-balance font-bold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl">{t.hero.title2}</span>
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="mb-8 max-w-lg text-pretty text-lg leading-relaxed text-muted-foreground"
+              className="mb-8 max-w-lg text-2xl leading-relaxed text-muted-foreground"
             >
               {t.hero.description}
             </motion.p>
@@ -109,7 +109,7 @@ export function HeroSection() {
                   className={`glass-effect rounded-2xl border p-6 ${stat.color}`}
                 >
                   <div className="text-3xl font-bold text-foreground">{stat.value}</div>
-                  <div className="mt-1 text-lg text-muted-foreground">{stat.label}</div>
+                  <div className="mt-1 text-xl text-muted-foreground">{stat.label}</div>
                 </motion.div>
               ))}
             </div>
@@ -125,7 +125,7 @@ export function HeroSection() {
         className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2"
       >
         <a href="#about" className="flex flex-col items-center gap-2 text-muted-foreground">
-          <span className="text-lg">Scroll</span>
+          <span className="text-xl">Scroll</span>
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ repeat: Infinity, duration: 1.5 }}

@@ -36,7 +36,7 @@ export function TestimonialsSection() {
           transition={{ duration: 0.5 }}
           className="mb-4 text-center"
         >
-          <span className="inline-block rounded-full bg-[#8b5cf6]/10 px-4 py-1.5 text-lg font-semibold text-[#8b5cf6]">
+          <span className="inline-block rounded-full bg-[#8b5cf6]/10 px-4 py-1.5 text-xl font-semibold text-[#8b5cf6]">
             {t.testimonials.tag}
           </span>
         </motion.div>
@@ -45,7 +45,7 @@ export function TestimonialsSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="mx-auto mb-4 max-w-2xl text-balance text-center text-3xl font-bold text-foreground sm:text-4xl lg:text-5xl"
+          className="mx-auto mb-4 max-w-2xl text-balance text-center text-4xl font-bold text-foreground sm:text-4xl lg:text-5xl"
         >
           {t.testimonials.title}
         </motion.h2>
@@ -54,7 +54,7 @@ export function TestimonialsSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.15 }}
-          className="mx-auto mb-16 max-w-2xl text-center text-lg leading-relaxed text-muted-foreground"
+          className="mx-auto mb-16 max-w-2xl text-center text-2xl leading-relaxed text-muted-foreground"
         >
           {t.testimonials.subtitle}
         </motion.p>
@@ -81,19 +81,19 @@ export function TestimonialsSection() {
               ))}
             </div>
 
-            <blockquote className="mb-8 text-lg leading-relaxed text-foreground sm:text-xl">
+            <blockquote className="mb-8 text-xl leading-relaxed text-foreground sm:text-xl">
               {`"${t.testimonials.items[active].quote}"`}
             </blockquote>
 
             <div className="flex items-center gap-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-lg font-bold text-primary">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-xl font-bold text-primary">
                 {t.testimonials.items[active].author.charAt(0)}
               </div>
               <div>
                 <div className="font-semibold text-foreground">
                   {t.testimonials.items[active].author}
                 </div>
-                <div className="text-lg text-muted-foreground">
+                <div className="text-xl text-muted-foreground">
                   {t.testimonials.items[active].company}
                 </div>
               </div>

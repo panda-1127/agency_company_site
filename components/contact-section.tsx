@@ -47,7 +47,7 @@ export function ContactSection() {
           transition={{ duration: 0.5 }}
           className="mb-4 text-center"
         >
-          <span className="inline-block rounded-full bg-primary/10 px-4 py-1.5 text-lg font-semibold text-primary">
+          <span className="inline-block rounded-full bg-primary/10 px-4 py-1.5 text-xl font-semibold text-primary">
             {t.contact.tag}
           </span>
         </motion.div>
@@ -56,7 +56,7 @@ export function ContactSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="mx-auto mb-4 max-w-2xl text-balance text-center text-3xl font-bold text-foreground sm:text-4xl lg:text-5xl"
+          className="mx-auto mb-4 max-w-2xl text-balance text-center text-4xl font-bold text-foreground sm:text-4xl lg:text-5xl"
         >
           {t.contact.title}
         </motion.h2>
@@ -65,7 +65,7 @@ export function ContactSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.15 }}
-          className="mx-auto mb-16 max-w-2xl text-center text-lg leading-relaxed text-muted-foreground"
+          className="mx-auto mb-16 max-w-2xl text-center text-2xl leading-relaxed text-muted-foreground"
         >
           {t.contact.subtitle}
         </motion.p>
@@ -90,12 +90,12 @@ export function ContactSection() {
                     {item.href ? (
                       <a
                         href={item.href}
-                        className="text-lg leading-relaxed text-foreground transition-colors hover:text-primary"
+                        className="text-xl leading-relaxed text-foreground transition-colors hover:text-primary"
                       >
                         {item.text}
                       </a>
                     ) : (
-                      <p className="text-lg leading-relaxed text-foreground">
+                      <p className="text-xl leading-relaxed text-foreground">
                         {item.text}
                       </p>
                     )}
@@ -132,48 +132,48 @@ export function ContactSection() {
             >
               <div className="grid gap-5 sm:grid-cols-2">
                 <div>
-                  <label className="mb-1.5 block text-lg font-medium text-foreground">
+                  <label className="mb-1.5 block text-xl font-medium text-foreground">
                     {t.contact.form.name}
                   </label>
                   <input
                     type="text"
                     required
-                    className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+                    className="w-full rounded-xl border border-input bg-background px-4 py-3 text-xl text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
                     placeholder={t.contact.form.name}
                   />
                 </div>
                 <div>
-                  <label className="mb-1.5 block text-lg font-medium text-foreground">
+                  <label className="mb-1.5 block text-xl font-medium text-foreground">
                     {t.contact.form.email}
                   </label>
                   <input
                     type="email"
                     required
-                    className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+                    className="w-full rounded-xl border border-input bg-background px-4 py-3 text-xl text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
                     placeholder={t.contact.form.email}
                   />
                 </div>
               </div>
 
               <div className="mt-5">
-                <label className="mb-1.5 block text-lg font-medium text-foreground">
+                <label className="mb-1.5 block text-xl font-medium text-foreground">
                   {t.contact.form.company}
                 </label>
                 <input
                   type="text"
-                  className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+                  className="w-full rounded-xl border border-input bg-background px-4 py-3 text-xl text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
                   placeholder={t.contact.form.company}
                 />
               </div>
 
               <div className="mt-5">
-                <label className="mb-1.5 block text-lg font-medium text-foreground">
+                <label className="mb-1.5 block text-xl font-medium text-foreground">
                   {t.contact.form.message}
                 </label>
                 <textarea
                   rows={5}
                   required
-                  className="w-full resize-none rounded-xl border border-input bg-background px-4 py-3 text-lg text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+                  className="w-full resize-none rounded-xl border border-input bg-background px-4 py-3 text-xl text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
                   placeholder={t.contact.form.message}
                 />
               </div>
@@ -181,7 +181,7 @@ export function ContactSection() {
               <button
                 type="submit"
                 disabled={sending}
-                className="mt-6 flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3.5 text-lg font-semibold text-primary-foreground transition-all hover:shadow-lg hover:shadow-primary/25 disabled:opacity-70"
+                className="mt-6 flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3.5 text-xl font-semibold text-primary-foreground transition-all hover:shadow-lg hover:shadow-primary/25 disabled:opacity-70"
               >
                 {sending ? (
                   t.contact.form.sending
