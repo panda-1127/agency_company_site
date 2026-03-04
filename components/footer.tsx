@@ -43,7 +43,7 @@ export function Footer() {
                 </span>
               </div> */}
             </div>
-            <p className="mb-6 text-xl leading-relaxed text-muted-foreground">
+            <p className="mb-6 text-xl leading-relaxed text-justify text-muted-foreground">
               {t.footer.description}
             </p>
             {/* <div className="flex gap-3">
@@ -122,11 +122,11 @@ export function Footer() {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder={t.footer.emailPlaceholder}
                 required
-                className="w-full rounded-lg border border-input bg-background px-3 py-2 text-xl text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+                className="w-full rounded-lg border border-input bg-background px-3 py-2 text-lg text-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
               />
               <button
                 type="submit"
-                className="shrink-0 rounded-lg bg-primary px-4 py-2 text-xl font-semibold text-primary-foreground transition-all hover:opacity-90"
+                className="shrink-0 rounded-lg bg-primary px-1 py-1 text-lg font-semibold text-primary-foreground transition-all hover:opacity-90"
               >
                 {t.footer.subscribe}
               </button>
@@ -141,7 +141,7 @@ export function Footer() {
           </p>
           <div className="flex items-center gap-6">
             <a
-              href="#contact"
+              href="#services"
               className="text-xl text-muted-foreground transition-colors hover:text-primary"
             >
               {t.footer.terms}

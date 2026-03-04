@@ -49,17 +49,17 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="mb-6 text-balance text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl"
+              className="mb-6 text-balance text-3xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl"
             >
               {t.hero.title1}{" "}
-              <span className="text-4xl text-balance font-bold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl">{t.hero.title2}</span>
+              <span className="text-3xl text-balance font-bold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl">{t.hero.title2}</span>
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="mb-8 max-w-lg text-2xl leading-relaxed text-muted-foreground"
+              className="mb-8 max-w-lg text-2xl leading-relaxed text-justify text-muted-foreground"
             >
               {t.hero.description}
             </motion.p>

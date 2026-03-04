@@ -138,8 +138,8 @@ export function ContactSection() {
                   <input
                     type="text"
                     required
-                    className="w-full rounded-xl border border-input bg-background px-4 py-3 text-xl text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
-                    placeholder={t.contact.form.name}
+                    className="w-full rounded-xl border border-input bg-background px-4 py-3 text-xl text-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+                    placeholder={t.contact.form.namePlaceholder}
                   />
                 </div>
                 <div>
@@ -149,8 +149,8 @@ export function ContactSection() {
                   <input
                     type="email"
                     required
-                    className="w-full rounded-xl border border-input bg-background px-4 py-3 text-xl text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
-                    placeholder={t.contact.form.email}
+                    className="w-full rounded-xl border border-input bg-background px-4 py-3 text-xl text-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+                    placeholder={t.contact.form.emailPlaceholder}
                   />
                 </div>
               </div>
@@ -161,8 +161,8 @@ export function ContactSection() {
                 </label>
                 <input
                   type="text"
-                  className="w-full rounded-xl border border-input bg-background px-4 py-3 text-xl text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
-                  placeholder={t.contact.form.company}
+                  className="w-full rounded-xl border border-input bg-background px-4 py-3 text-xl text-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+                  placeholder={t.contact.form.companyPlaceholder}
                 />
               </div>
 
@@ -173,8 +173,8 @@ export function ContactSection() {
                 <textarea
                   rows={5}
                   required
-                  className="w-full resize-none rounded-xl border border-input bg-background px-4 py-3 text-xl text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
-                  placeholder={t.contact.form.message}
+                  className="w-full resize-none rounded-xl border border-input bg-background px-4 py-3 text-xl text-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+                  placeholder={t.contact.form.messagePlaceholder}
                 />
               </div>
 

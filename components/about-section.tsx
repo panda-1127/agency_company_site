@@ -15,15 +15,11 @@ export function AboutSection() {
   return (
     <section id="about" className="relative overflow-hidden py-24 lg:py-32" ref={ref}>
       {/* Background pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle at 25px 25px, currentColor 1px, transparent 0)",
-            backgroundSize: "50px 50px",
-          }}
-        />
+      <div
+        className="absolute inset-0 z-0 bg-cover bg-center"
+        style={{ backgroundImage: "url(/images/about-bg.jpg)" }}
+      >
+        <div className="absolute inset-0 bg-background/80 dark:bg-background/80" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -43,7 +39,7 @@ export function AboutSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="mx-auto mb-16 max-w-3xl text-balance text-center text-4xl font-bold text-foreground sm:text-5xl lg:text-6xl"
+          className="mx-auto mb-16 max-w-2xl text-balance text-center text-4xl font-bold text-foreground sm:text-5xl lg:text-6xl"
         >
           {t.about.title}
         </motion.h2>
@@ -61,8 +57,8 @@ export function AboutSection() {
                 src="/images/about.jpg"
                 alt="C3 Core team collaborating in modern office"
                 width={600}
-                height={700}
-                className="h-[700px] w-full object-cover"
+                height={650}
+                className="h-[650px] w-full object-cover"
                 suppressHydrationWarning
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
@@ -75,7 +71,7 @@ export function AboutSection() {
               className="absolute -bottom-6 -right-4 glass-effect rounded-xl border border-border bg-card/90 p-4 shadow-xl sm:right-4"
             >
               <div className="text-2xl font-bold text-primary">2025</div>
-              <div className="text-lg text-muted-foreground">Founded in Shenzhen</div>
+              <div className="text-lg text-muted-foreground">Founded in ShenZhen</div>
             </motion.div>
           </motion.div>
 
@@ -85,15 +81,15 @@ export function AboutSection() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.3 }}
           >
-            <p className="mb-4 text-2xl leading-relaxed text-muted-foreground">
+            <p className="mb-0.5 text-xl leading-relaxed text-justify text-muted-foreground">
               {t.about.description}
             </p>
-            <p className="mb-8 text-2xl leading-relaxed text-muted-foreground">
+            <p className="mb-0.5 text-xl leading-relaxed text-justify text-muted-foreground">
               {t.about.description2}
             </p>
 
             {/* Values Grid */}
-            <div className="grid gap-4 sm:grid-cols-3">
+            <div className="flex w-full flex-col gap-4">
               {[
                 {
                   icon: Target,
@@ -119,17 +115,17 @@ export function AboutSection() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.5, delay: 0.5 + i * 0.1 }}
-                  className="rounded-xl border border-border bg-card p-4"
+                  className=" w-full rounded-xl border border-border bg-card p-4"
                 >
                   <div
-                    className={`mb-3 inline-flex h-10 w-10 items-center justify-center rounded-lg ${item.color}`}
+                    className={`mb-1 inline-flex h-10 w-10 items-center justify-center rounded-lg ${item.color}`}
                   >
                     <item.icon className="h-5 w-5" />
                   </div>
-                  <h3 className="mb-1 text-2xl font-semibold text-foreground">
+                  <h3 className="inline-block mb-0.5 text-2xl font-semibold text-foreground">
                     {item.title}
                   </h3>
-                  <p className="text-xl leading-relaxed text-muted-foreground">
+                  <p className="text-lg text-justify leading-relaxed text-muted-foreground">
                     {item.desc}
                   </p>
                 </motion.div>

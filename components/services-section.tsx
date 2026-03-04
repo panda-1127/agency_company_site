@@ -2,6 +2,7 @@
 
 import { useLanguage } from "@/lib/language-context"
 import { motion, useInView } from "framer-motion"
+import Image from "next/image"
 import { useRef } from "react"
 import {
   Globe,
@@ -80,23 +81,37 @@ export function ServicesSection() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.2 + i * 0.1 }}
-                className="group relative overflow-hidden rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                className="group relative overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
               >
-                {/* Gradient accent top */}
-                <div
-                  className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${colorMap[i]} opacity-0 transition-opacity group-hover:opacity-100`}
-                />
+                {/* Image */}
+                {"image" in service && service.image && (
+                  <div className="relative h-44 w-full overflow-hidden rounded-t-2xl border-b border-border bg-muted">
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      fill
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
+                  </div>
+                )}
 
-                <div
-                  className={`mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${colorMap[i]} text-white shadow-lg`}
-                >
-                  <Icon className="h-6 w-6" />
-                </div>
+                <div className="p-6">
+                  {/* Gradient accent top */}
+                  <div
+                    className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${colorMap[i]} opacity-0 transition-opacity group-hover:opacity-100`}
+                  />
+
+                  <div
+                    className={`mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${colorMap[i]} text-white shadow-lg`}
+                  >
+                    <Icon className="h-6 w-6" />
+                  </div>
 
                 <h3 className="mb-2 text-2xl font-semibold text-foreground">
                   {service.title}
                 </h3>
-                <p className="text-xl leading-relaxed text-muted-foreground">
+                <p className="text-lg text-justify leading-relaxed text-muted-foreground">
                   {service.description}
                 </p>
 
@@ -119,6 +134,7 @@ export function ServicesSection() {
                     />
                   </svg>
                 </a>
+                </div>
               </motion.div>
             )
           })}

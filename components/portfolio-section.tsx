@@ -35,7 +35,14 @@ export function PortfolioSection() {
 
   return (
     <section id="portfolio" className="relative py-24 lg:py-32" ref={ref}>
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div
+        className="absolute inset-0 z-0 bg-cover bg-center"
+        style={{ backgroundImage: "url(/images/portfolio-bg.jpg)" }}
+      >
+        <div className="absolute inset-0 bg-background/80 dark:bg-background/80" />
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -123,7 +130,7 @@ export function PortfolioSection() {
                 <h3 className="mb-2 text-2xl font-semibold text-foreground">
                   {project.title}
                 </h3>
-                <p className="mb-4 text-xl leading-relaxed text-muted-foreground">
+                <p className="mb-4 text-xl text-justify leading-relaxed text-muted-foreground">
                   {project.description}
                 </p>
 

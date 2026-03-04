@@ -57,36 +57,42 @@ export const translations = {
           description:
             "Building and maintaining websites, web applications, and seamless digital user experiences that drive business growth and engagement.",
           icon: "globe",
+          image: "/images/services/web-dev.jpg",
         },
         {
           title: "AI & Machine Learning",
           description:
             "Intelligent solutions powered by cutting edge AI, from natural language processing to computer vision and predictive analytics platforms.",
           icon: "brain",
+          image: "/images/services/ai-ml.jpg",
         },
         {
           title: "Cloud Architecture",
           description:
             "Cloud-native solutions on AWS, Azure, and Alibaba Cloud. We design, migrate, and optimize your infrastructure for peak performance.",
           icon: "cloud",
+          image: "/images/services/cloud.jpg",
         },
         {
           title: "Mobile Development",
           description:
             "Cross-platform mobile applications using React Native and Flutter, with deep integration into WeChat Mini Programs and Alipay ecosystem.",
           icon: "mobile",
+          image: "/images/services/mobile.jpg",
         },
         {
           title: "Blockchain Development",
           description:
             "Building decentralized applications, smart contracts, and blockchain infrastructure for the next generation of digital trust and transparency.",
           icon: "bitcoin",
+          image: "/images/services/blockchain.jpg",
         },
         {
           title: "DevOps & Security",
           description:
             "CI/CD pipelines, container orchestration with Kubernetes, and comprehensive cybersecurity solutions to protect your digital assets.",
           icon: "shield",
+          image: "/images/services/devops.jpg",
         },
       ],
     },
@@ -95,7 +101,7 @@ export const translations = {
       tag: "Our Work",
       title: "Featured Projects",
       subtitle:
-        "Real-world solutions that drive real business results. Explore our latest projects across multiple industries.",
+        "Real world solutions that drive real business results. Explore our latest projects across multiple industries.",
       viewProject: "View Project",
       viewAll: "View All Projects",
       items: [
@@ -103,7 +109,7 @@ export const translations = {
           title: "Nerobot | The LLM powered scraper for your LLM Apps",
           category: "AI & Machine Learning",
           description:
-            "Nero AI is an online artificial intelligence-powered media enhancement platform that uses AI to improve and transform images and videos. Its tools help users upscale, sharpen, restore, colorize, and edit visual content",
+            "Nero AI is an online artificial intelligence powered media enhancement platform that uses AI to improve and transform images and videos. Its tools help users upscale, sharpen, restore, colorize, and edit visual content",
           tech: ["React", "SasS", "Node.js", "PyTorch"],
           link: "https://www.nero.ai/",
         },
@@ -111,8 +117,8 @@ export const translations = {
           title: "Stabble | Solana's first frictionless liquidity",
           category: "Blockchain",
           description:
-            "stabble is a protocol revolutionizing liquidity pools by introducing protocol-managed and arbitrage pools. This allows stabble to tackle critical inefficiencies prevalent within Solana's decentralized exchanges.",
-          tech: ["Next.js", "Rust", "Solana SDK", "Solana Web3.js"],
+            "stabble is protocol revolutionizing liquidity pools by introducing protocol managed and arbitrage pools. This allows stabble to tackle critical inefficiencies prevalent within Solana's decentralized exchanges.",
+          tech: ["Next.js", "Rust", "Solana SDK", "Web3.js"],
           link: "https://stabble.org/",
         },
         {
@@ -120,22 +126,22 @@ export const translations = {
           category: "Ecommerce",
           description:
             "Resolve customer inquiries instantly across email, comments, and DMs with our AI agent built for DTC brands",
-          tech: ["Next.js", "Node.js", "External LLMs", "Shopify API"],
+          tech: ["Next.js", "Node.js", "LLMs", "Shopify API"],
           link: "https://brandwise.ai/",
         },
         {
           title: "MOD Pizza | All Pizzas Welcome",
           category: "Ecommerce",
           description:
-            "Create your own personal pizza at MOD Pizza today! And it's always unlimited toppings for one price - go make your masterpiece.",
-          tech: ["WP Engine", "Cloudflare", "Google Tag Manager", "SAP solutions"],
+            "Create your own personal pizza at MOD Pizza today! And it's always unlimited toppings for one price go make your masterpiece.",
+          tech: ["WP Engine", "Cloudflare", "PHP", "SAP"],
           link: "https://modpizza.com/",
         },
         {
           title: "The Hundreds",
           category: "Ecommerce",
           description:
-            "The Hundreds is a community-based streetwear brand and media platform with an emphasis on People Over Product.",
+            "Hundreds is community based streetwear brand and media platform with emphasis on People Over Product.",
           tech: ["Next.js", "Shopify", "Klaviyo", "Webpack"],
           link: "https://thehundreds.com/",
         },
@@ -174,7 +180,7 @@ export const translations = {
         {
           name: "Wang Xiaoli",
           role: "Design Director",
-          bio: "Award winning UX designer who believes in human centered design. Previously led design at a top Shenzhen AI startup.",
+          bio: "Award winning UX designer who believes in human centered design. Previously led design at a top ShenZhen AI startup.",
         },
       ],
     },
@@ -223,14 +229,18 @@ export const translations = {
         "Whether you have a clear vision or just an idea, our team is ready to help you navigate the path from concept to launch.",
       form: {
         name: "Your Name",
+        namePlaceholder: "Enter your name",
         email: "Email Address",
+        emailPlaceholder: "Enter your email",
         company: "Company Name",
+        companyPlaceholder: "Enter your company name",
         message: "Tell us about your project",
+        messagePlaceholder: "Enter your message",
         submit: "Send Message",
         sending: "Sending...",
       },
       info: {
-        address: "C3 Core, 2010 Caitian Rd, Futian District, Shenzhen",
+        address: "C3 Core, 2010 Caitian Rd, Futian District, ShenZhen",
         email: "admin@c3core.org",
         phone: "+86 755 4958 0295",
         hours: "Mon - Fri: 9:00 AM - 6:00 PM (CST)",
@@ -307,36 +317,42 @@ export const translations = {
           description:
             "\u6784\u5efa\u548c\u7ef4\u62a4\u7f51\u7ad9\u3001\u0057\u0065\u0062\u5e94\u7528\u7a0b\u5e8f\u4ee5\u53ca\u6d41\u7545\u7684\u6570\u5b57\u7528\u6237\u4f53\u9a8c\uff0c\u4ece\u800c\u63a8\u52a8\u4e1a\u52a1\u589e\u957f\u548c\u7528\u6237\u53c2\u4e0e\u3002",
           icon: "globe",
+          image: "/images/services/web-dev.jpg",
         },
         {
           title: "AI\u4e0e\u673a\u5668\u5b66\u4e60",
           description:
             "\u7531\u5c16\u7aef AI \u9a71\u52a8\u7684\u667a\u80fd\u89e3\u51b3\u65b9\u6848\uff0c\u4ece\u81ea\u7136\u8bed\u8a00\u5904\u7406\u5230\u8ba1\u7b97\u673a\u89c6\u89c9\u548c\u9884\u6d4b\u5206\u6790\u5e73\u53f0\u3002",
           icon: "brain",
+          image: "/images/services/ai-ml.jpg",
         },
         {
           title: "\u4e91\u67b6\u6784",
           description:
             "\u57fa\u4e8eAWS\u3001Azure\u548c\u963f\u91cc\u4e91\u7684\u4e91\u539f\u751f\u89e3\u51b3\u65b9\u6848\u3002\u6211\u4eec\u8bbe\u8ba1\u3001\u8fc1\u79fb\u548c\u4f18\u5316\u60a8\u7684\u57fa\u7840\u8bbe\u65bd\uff0c\u4ee5\u8fbe\u5230\u5cf0\u503c\u6027\u80fd\u3002",
           icon: "cloud",
+          image: "/images/services/cloud.jpg",
         },
         {
           title: "\u79fb\u52a8\u5f00\u53d1",
           description:
             "\u4f7f\u7528React Native\u548cFlutter\u5f00\u53d1\u8de8\u5e73\u53f0\u79fb\u52a8\u5e94\u7528\uff0c\u6df1\u5ea6\u96c6\u6210\u5fae\u4fe1\u5c0f\u7a0b\u5e8f\u548c\u652f\u4ed8\u5b9d\u751f\u6001\u7cfb\u7edf\u3002",
           icon: "mobile",
+          image: "/images/services/mobile.jpg",
         },
         {
           title: "\u533a\u5757\u94fe\u5f00\u53d1",
           description:
             "\u6784\u5efa\u53bb\u4e2d\u5fc3\u5316\u5e94\u7528\u7a0b\u5e8f\u3001\u667a\u80fd\u5408\u7ea6\u548c\u533a\u5757\u94fe\u57fa\u7840\u8bbe\u65bd\uff0c\u4ee5\u5b9e\u73b0\u4e0b\u4e00\u4ee3\u6570\u5b57\u4fe1\u4efb\u548c\u900f\u660e\u5ea6\u3002",
           icon: "bitcoin",
+          image: "/images/services/blockchain.jpg",
         },
         {
           title: "DevOps\u4e0e\u5b89\u5168",
           description:
             "CI/CD\u7ba1\u9053\u3001Kubernetes\u5bb9\u5668\u7f16\u6392\u548c\u5168\u9762\u7684\u7f51\u7edc\u5b89\u5168\u89e3\u51b3\u65b9\u6848\uff0c\u4fdd\u62a4\u60a8\u7684\u6570\u5b57\u8d44\u4ea7\u3002",
           icon: "shield",
+          image: "/images/services/devops.jpg",
         },
       ],
     },
@@ -362,7 +378,7 @@ export const translations = {
           category: "\u533a\u5757\u94fe",
           description:
             "Stabble \u534f\u8bae\u901a\u8fc7\u5f15\u5165\u534f\u8bae\u7ba1\u7406\u7684\u6d41\u52a8\u6027\u6c60\u548c\u5957\u5229\u6c60, \u5f7b\u5e95\u9769\u65b0\u4e86\u6d41\u52a8\u6027\u6c60. \u89e3\u51b3 Solana \u53bb\u4e2d\u5fc3\u5316\u4ea4\u6613\u6240\u4e2d\u666e\u904d\u5b58\u5728\u7684\u5173\u952e\u6548\u7387\u4f4e\u4e0b\u95ee\u9898",
-          tech: ["Next.js", "Rust", "Solana SDK", "Solana Web3.js"],
+          tech: ["Next.js", "Rust", "Solana SDK", "Web3.js"],
           link: "https://stabble.org/",
         },
         {
@@ -370,7 +386,7 @@ export const translations = {
           category: "\u7535\u5b50\u5546\u52a1",
           description:
             "\u5229\u7528\u6211\u4eec\u4e13\u4e3a DTC \u54c1\u724c\u6253\u9020\u7684 AI \u4ee3\u7406, \u5373\u65f6\u89e3\u51b3\u5ba2\u6237\u901a\u8fc7\u7535\u5b50\u90ae\u4ef6, \u8bc4\u8bba\u548c\u79c1\u4fe1\u63d0\u51fa\u7684\u7591\u95ee",
-          tech: ["Next.js", "Node.js", "External LLMs", "Shopify API"],
+          tech: ["Next.js", "Node.js", "LLMs", "Shopify API"],
           link: "https://brandwise.ai/",
         },
         {
@@ -378,7 +394,7 @@ export const translations = {
           category: "\u7535\u5b50\u5546\u52a1",
           description:
             "\u4eca\u5929\u5c31\u6765 MOD Pizza \u6253\u9020\u4f60\u4e13\u5c5e\u7684\u4e2a\u6027\u5316\u62ab\u8428\u5427\uff01 \u914d\u6599\u65e0\u9650\u91cf\u4f9b\u5e94, \u4ef7\u683c\u7edf\u4e00\u2014\u5feb\u6765\u521b\u4f5c\u4f60\u7684\u6770\u4f5c\u5427\uff01",
-          tech: ["WP Engine", "Cloudflare", "Google Tag Manager", "SAP solutions"],
+          tech: ["WP Engine", "Cloudflare", "PHP", "SAP"],
           link: "https://modpizza.com/",
         },
         {
@@ -473,9 +489,13 @@ export const translations = {
         "\u65e0\u8bba\u60a8\u6709\u660e\u786e\u7684\u613f\u666f\u8fd8\u662f\u4e00\u4e2a\u60f3\u6cd5\uff0c\u6211\u4eec\u7684\u56e2\u961f\u90fd\u51c6\u5907\u597d\u5e2e\u52a9\u60a8\u4ece\u6982\u5ff5\u5230\u53d1\u5e03\u3002",
       form: {
         name: "\u60a8\u7684\u59d3\u540d",
+        namePlaceholder: "\u8f93\u5165\u60a8\u7684\u59d3\u540d",
         email: "\u7535\u5b50\u90ae\u7bb1",
+        emailPlaceholder: "\u8f93\u5165\u60a8\u7684\u90ae\u7bb1",
         company: "\u516c\u53f8\u540d\u79f0",
+        companyPlaceholder: "\u8f93\u5165\u516c\u53f8\u540d\u79f0",
         message: "\u8bf7\u544a\u8bc9\u6211\u4eec\u60a8\u7684\u9879\u76ee",
+        messagePlaceholder: "\u8f93\u5165\u60a8\u7684\u6d88\u606f",
         submit: "\u53d1\u9001\u6d88\u606f",
         sending: "\u53d1\u9001\u4e2d...",
       },
